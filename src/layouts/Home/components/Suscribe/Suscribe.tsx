@@ -48,7 +48,7 @@ function Suscribe() {
             fontSize={{ base: "12px", md: "14px" }}
             textDecoration={"line-through"}
           >
-            $14100
+            $14.100
           </Text>
           <Text
             marginTop="0"
@@ -72,7 +72,7 @@ function Suscribe() {
       >
         <Text style={{
           fontSize: "20px",
-          fontWeight: "bold",
+          fontWeight: "300",
         }}
         >Consigue los mejores beneficios en Mercado Libre</Text>
         <MediaQuery minWidth={1000}>

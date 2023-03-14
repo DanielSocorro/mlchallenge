@@ -147,10 +147,11 @@ export default function Navbar(): JSX.Element {
                 <BreadcrumbLink href="#">
                   <span
                    style={{
-                    position: "relative",
-                    right: "57.5%",
-                    bottom: "88%",
-                    marginLeft: "59px",
+                    position: "absolute",
+                    left: "auto",
+                    right:"auto",
+                    marginLeft: "29px",
+                    marginTop:"-6px",
                     backgroundColor: "#3483fa",
                     borderRadius: "8px",
                     fontWeight: "bolder",
@@ -159,7 +160,7 @@ export default function Navbar(): JSX.Element {
                     padding: "1px 3px",
                     lineHeight: "1em",
                     color: "#fff",
-                    display: "block",
+                    display: "inline-block",
                 }}
                 >nuevo</span>Supermercado</BreadcrumbLink>
               </BreadcrumbItem>
