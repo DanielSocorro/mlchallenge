@@ -46,6 +46,7 @@ export default function Navbar(): JSX.Element {
               <Image
                 src={logo}
                 objectFit="contain"
+                marginLeft="-9px"
                 onClick={() => {
                   navigate("/");
                 }}

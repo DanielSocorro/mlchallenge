@@ -29,7 +29,7 @@ function NavbarMobile() {
           src={logo}
           h="90%"
           onClick={() => {
-            navigate("/ml-clon");
+            navigate("/");
           }}
           cursor="pointer"
         />
