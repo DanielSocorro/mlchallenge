@@ -1,6 +1,7 @@
-import {Box, HStack, Stack, Image, Input, Icon, Text, Breadcrumb, 
+import {Box, HStack, Stack, Image, Input, Icon, Text, Menu, MenuItem, MenuList, Breadcrumb, 
   BreadcrumbItem, BreadcrumbLink, Wrap, WrapItem, Square, 
-  Divider, Center, VStack, StackItem} from "@chakra-ui/react";
+  Divider, Center, VStack, StackItem, Popover, PopoverArrow,
+   PopoverBody, PopoverContent, PopoverTrigger} from "@chakra-ui/react";
 import logo from "../../Images/logo.png";
 import promoImg from "../../Images/promo-img.webp";
 import {AiOutlineSearch, 
@@ -121,7 +122,58 @@ export default function Navbar(): JSX.Element {
 
             <Breadcrumb separator={""}>
               <BreadcrumbItem>
-                <BreadcrumbLink
+              <Popover>
+      <PopoverTrigger>
+        <BreadcrumbLink
+          display={"flex"}
+          alignItems={"center"}
+          gap={"2"}
+          _hover={{ textDecoration: "none" }}
+        >
+          Categorías
+          <Icon
+            as={MdKeyboardArrowDown}
+            position={"relative"}
+            top={"2px"}
+            w={"12px"}
+            h={"12px"}
+            _hover={{ color: "blue.500" }}
+          />
+        </BreadcrumbLink>
+      </PopoverTrigger>
+      <PopoverContent 
+      bg={"black"} 
+      border={0}
+      w={200}
+      >
+        <PopoverArrow />
+        <PopoverBody>
+          <Menu>
+            <MenuList>
+              <MenuItem>Vehiculos</MenuItem>
+              <MenuItem>Inmuebles</MenuItem>
+              <MenuItem>Supermercado</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnologia</MenuItem>
+            </MenuList>
+          </Menu>
+        </PopoverBody>
+      </PopoverContent>
+    </Popover>
+                {/* <BreadcrumbLink
                   href="#"
                   display={"flex"}
                   alignItems={"center"}
@@ -137,7 +189,7 @@ export default function Navbar(): JSX.Element {
                     w={"12px"}
                     h={"12px"}
                   />
-                </BreadcrumbLink>
+                </BreadcrumbLink> */}
               </BreadcrumbItem>
 
               <BreadcrumbItem>
