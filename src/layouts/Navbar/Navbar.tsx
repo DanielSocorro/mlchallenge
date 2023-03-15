@@ -145,6 +145,8 @@ export default function Navbar(): JSX.Element {
       bg={"black"} 
       border={0}
       w={200}
+      h={500}
+      color={"white"}
       >
         <PopoverArrow />
         <PopoverBody>
@@ -153,21 +155,21 @@ export default function Navbar(): JSX.Element {
               <MenuItem>Vehiculos</MenuItem>
               <MenuItem>Inmuebles</MenuItem>
               <MenuItem>Supermercado</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
-              <MenuItem>Tecnologia</MenuItem>
+              <MenuItem>Tecnología</MenuItem>
+              <MenuItem>Accesorios para Vehículos</MenuItem>
+              <MenuItem>Electrodomésticos</MenuItem>
+              <MenuItem>Hogar Muebles</MenuItem>
+              <MenuItem>Belleza y cuidado personal</MenuItem>
+              <MenuItem>Moda</MenuItem>
+              <MenuItem>Deportes y Fitness</MenuItem>
+              <MenuItem>Herramientas</MenuItem>
+              <MenuItem>Construcción</MenuItem>
+              <MenuItem>Compra Internacional</MenuItem>
+              <MenuItem>Farmacias</MenuItem>
+              <MenuItem>Salud y Equipamiento Médico</MenuItem>
+              <MenuItem>Productos Sustentables</MenuItem>
+              <MenuItem>Industrias y Oficinas</MenuItem>
+              <MenuItem>Ver más categorias</MenuItem>
             </MenuList>
           </Menu>
         </PopoverBody>
