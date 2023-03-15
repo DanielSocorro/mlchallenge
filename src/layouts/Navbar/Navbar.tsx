@@ -7,7 +7,8 @@ import {AiOutlineSearch,
   AiOutlineShoppingCart} from "react-icons/ai";
 import {GoLocation, } from "react-icons/go";
 import {MdKeyboardArrowDown} from "react-icons/md";
-import {HiOutlineUser, HiOutlineBell} from "react-icons/hi2"
+import {HiOutlineUser} from "react-icons/hi2";
+import {TfiBell} from "react-icons/tfi";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
@@ -15,6 +16,7 @@ import {useNavigate} from "react-router-dom";
 export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
   const navigate = useNavigate();
+  
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setNewQuery(e.currentTarget.value);
@@ -107,7 +109,7 @@ export default function Navbar(): JSX.Element {
           <HStack spacing={12}>
           <Stack alignItems="center" direction="row" spacing={1}>
            <Icon as={GoLocation} height={6} width={6} />
-            <Stack spacing={0}>
+            <Stack spacing={0} >
             <Text color="blackAlpha.700" fontSize="xs" lineHeight="normal">
                Enviar a Mariela
             </Text>
@@ -125,6 +127,8 @@ export default function Navbar(): JSX.Element {
                   alignItems={"center"}
                   gap={"2"}
                 >
+
+      
                   Categorias
                   <Icon
                     as={MdKeyboardArrowDown}
@@ -183,7 +187,7 @@ export default function Navbar(): JSX.Element {
           <Wrap color={"var(--chakra-colors-blackAlpha-800)"}>
             <WrapItem
               display={"flex"}
-              alignItems={"center"}
+              alignItems={"flex-start"}
               gap={"1"}
               cursor="pointer"
             >
@@ -194,10 +198,9 @@ export default function Navbar(): JSX.Element {
                /> Mariela
                <Icon
                 as={MdKeyboardArrowDown}
-                position={"relative"}
                 color={"GrayText"}
                 w={"12px"}
-                h={"12px"}
+                h={"24px"}
                 marginLeft={"1px"}
                 marginRight={"8px"}
               />
@@ -218,18 +221,17 @@ export default function Navbar(): JSX.Element {
               <Wrap>
                 <StackItem>
                   <span style={{
-                     position: "sticky",
-                     bottom: "98.5%",
+                     position: "relative",
+                     top:"-38%",
                      left:"60%",
                      backgroundColor: "red",
-                     borderRadius: "10px",
-                     fontSize: "10px",
+                     borderRadius: "3px",
+                     fontSize: "10.5px",
                      padding: "0px 3.5px",
                      color: "#fff",
-                   
                   }}
                   >1</span>
-                  <Icon as={HiOutlineBell}
+                  <Icon as={TfiBell}
                    h="20px"
                    w="20px"
                    cursor="pointer" />
