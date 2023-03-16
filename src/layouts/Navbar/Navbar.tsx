@@ -143,15 +143,14 @@ export default function Navbar(): JSX.Element {
       </PopoverTrigger>
       <PopoverContent 
       bg={"black"} 
-      border={0}
-      w={200}
+      border={1}
+      w={290}
       h={500}
-      color={"white"}
       >
-        <PopoverArrow />
-        <PopoverBody>
+        <PopoverArrow backgroundColor={"black"} />
+        <PopoverBody> 
           <Menu>
-            <MenuList>
+          <MenuList>
               <MenuItem>Vehiculos</MenuItem>
               <MenuItem>Inmuebles</MenuItem>
               <MenuItem>Supermercado</MenuItem>
