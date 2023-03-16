@@ -8,7 +8,6 @@ import {
   Text,
   Menu,
   MenuItem,
-  MenuList,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -21,9 +20,9 @@ import {
   StackItem,
   Popover,
   PopoverArrow,
-  PopoverBody,
   PopoverContent,
   PopoverTrigger,
+  useDisclosure,
 } from "@chakra-ui/react";
 import logo from "../../Images/logo.png";
 import promoImg from "../../Images/promo-img.webp";
@@ -32,13 +31,14 @@ import { GoLocation } from "react-icons/go";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi2";
 import { TfiBell } from "react-icons/tfi";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
   const navigate = useNavigate();
-
+  const { onOpen, onClose, isOpen } = useDisclosure();
+  
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setNewQuery(e.currentTarget.value);
   };
@@ -51,6 +51,14 @@ export default function Navbar(): JSX.Element {
       navigate(`/search/?search=${newQuery}`);
     }
   };
+  
+  const handleMouseEnter = useCallback(() => {
+    onOpen();
+  }, [onOpen]);
+  
+  const handleMouseLeave = useCallback(() => {
+    onClose();
+  }, [onClose]);
 
   return (
     <Box bg="yellow" w={"100%"} h={"100px"} p={"8px 0"} gap={"20px"}>
@@ -142,13 +150,19 @@ export default function Navbar(): JSX.Element {
 
             <Breadcrumb separator={""}>
               <BreadcrumbItem>
-                <Popover>
+                <Popover
+                isOpen={isOpen}
+                onClose={onClose}
+                closeOnBlur={true}
+                closeOnEsc={true}>
                   <PopoverTrigger>
                     <BreadcrumbLink
                       display={"flex"}
                       alignItems={"center"}
                       gap={"2"}
                       _hover={{ textDecoration: "none" }}
+                      onMouseEnter={handleMouseEnter}
+                     
                     >
                       Categorías
                       <Icon
@@ -164,36 +178,38 @@ export default function Navbar(): JSX.Element {
                   <PopoverContent
                     bg={"#333"}
                     border={0}
-                    w={350}
-                    h={500}
+                    w={250}
+                    h={"auto"}
                     color={"#fff"}
+                    fontSize={"13px"}
+                    fontWeight={"bold"}
+                    lineHeight={"1.3"}
                     display={"block"}
-                    padding={"10px 36px"}
-                    lineHeight={"2.59"}
-                    maxW={"260px"}
+                    padding={"10px 20px"}
                     overflow={"hidden"}
+                 
                   >
                   <PopoverArrow bg={"#333"} />
-                    
-                          Vehiculos
-                          Inmuebles
-                          Supermercado
-                          Tecnología
-                          Accesorios para Vehículos
-                          Electrodomésticos
-                          Hogar Muebles
-                          Belleza y cuidado personal
-                          Moda
-                          Deportes y Fitness
-                          Herramientas
-                          Construcción
-                          Compra Internacional
-                          Farmacias
-                          Salud y Equipamiento Médico
-                          Productos Sustentables
-                          Industrias y Oficinas
-                          Ver más categorias
-                      
+                    <Menu>
+                         <MenuItem>Vehiculos</MenuItem>
+                          <MenuItem>Inmuebles</MenuItem>
+                          <MenuItem>Supermercado</MenuItem>
+                          <MenuItem>Tecnología</MenuItem>
+                          <MenuItem>Accesorios para Vehículos</MenuItem>
+                          <MenuItem>Electrodomésticos</MenuItem>
+                          <MenuItem>Hogar Muebles</MenuItem>
+                          <MenuItem>Belleza y cuidado personal</MenuItem>
+                          <MenuItem>Moda</MenuItem>
+                          <MenuItem>Deportes y Fitness</MenuItem>
+                          <MenuItem>Herramientas</MenuItem>
+                          <MenuItem>Construcción</MenuItem> 
+                          <MenuItem>Compra Internacional</MenuItem>
+                          <MenuItem>Farmacias</MenuItem>
+                          <MenuItem>Salud y Equipamiento Médico</MenuItem>
+                          <MenuItem>Productos Sustentables</MenuItem>
+                          <MenuItem>Industrias y Oficinas</MenuItem>
+                          <MenuItem>Ver más categorias</MenuItem>
+                          </Menu>
                   </PopoverContent>
                 </Popover>
               </BreadcrumbItem>
