@@ -187,7 +187,7 @@ export default function Navbar(): JSX.Element {
                     display={"block"}
                     padding={"10px 20px"}
                     overflow={"hidden"}
-                 
+                    onMouseLeave={handleMouseLeave}
                   >
                   <PopoverArrow bg={"#333"} />
                     <Menu>
