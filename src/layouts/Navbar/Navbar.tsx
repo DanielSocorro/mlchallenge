@@ -1,23 +1,43 @@
-import {Box, HStack, Stack, Image, Input, Icon, Text, Menu, MenuItem, MenuList, Breadcrumb, 
-  BreadcrumbItem, BreadcrumbLink, Wrap, WrapItem, Square, 
-  Divider, Center, VStack, StackItem, Popover, PopoverArrow,
-   PopoverBody, PopoverContent, PopoverTrigger} from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Stack,
+  Image,
+  Input,
+  Icon,
+  Text,
+  Menu,
+  MenuItem,
+  MenuList,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Wrap,
+  WrapItem,
+  Square,
+  Divider,
+  Center,
+  VStack,
+  StackItem,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverContent,
+  PopoverTrigger,
+} from "@chakra-ui/react";
 import logo from "../../Images/logo.png";
 import promoImg from "../../Images/promo-img.webp";
-import {AiOutlineSearch, 
-  AiOutlineShoppingCart} from "react-icons/ai";
-import {GoLocation, } from "react-icons/go";
-import {MdKeyboardArrowDown} from "react-icons/md";
-import {HiOutlineUser} from "react-icons/hi2";
-import {TfiBell} from "react-icons/tfi";
-import {useState} from "react";
-import {useNavigate} from "react-router-dom";
-
+import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import { GoLocation } from "react-icons/go";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { HiOutlineUser } from "react-icons/hi2";
+import { TfiBell } from "react-icons/tfi";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
   const navigate = useNavigate();
-  
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setNewQuery(e.currentTarget.value);
@@ -108,90 +128,74 @@ export default function Navbar(): JSX.Element {
           color={"var(--chakra-colors-blackAlpha-600)"}
         >
           <HStack spacing={12}>
-          <Stack alignItems="center" direction="row" spacing={1}>
-           <Icon as={GoLocation} height={6} width={6} />
-            <Stack spacing={0} >
-            <Text color="blackAlpha.700" fontSize="xs" lineHeight="normal">
-               Enviar a Mariela
-            </Text>
-            <Text color="blackAlpha.900" fontSize="sm" lineHeight="normal">
-              Paseo Central R...
-            </Text>
+            <Stack alignItems="center" direction="row" spacing={1}>
+              <Icon as={GoLocation} height={6} width={6} />
+              <Stack spacing={0}>
+                <Text color="blackAlpha.700" fontSize="xs" lineHeight="normal">
+                  Enviar a Mariela
+                </Text>
+                <Text color="blackAlpha.900" fontSize="sm" lineHeight="normal">
+                  Paseo Central R...
+                </Text>
+              </Stack>
             </Stack>
-           </Stack>
 
             <Breadcrumb separator={""}>
               <BreadcrumbItem>
-              <Popover>
-      <PopoverTrigger>
-        <BreadcrumbLink
-          display={"flex"}
-          alignItems={"center"}
-          gap={"2"}
-          _hover={{ textDecoration: "none" }}
-        >
-          Categorías
-          <Icon
-            as={MdKeyboardArrowDown}
-            position={"relative"}
-            top={"2px"}
-            w={"12px"}
-            h={"12px"}
-            _hover={{ color: "blue.500" }}
-          />
-        </BreadcrumbLink>
-      </PopoverTrigger>
-      <PopoverContent 
-      bg={"black"} 
-      border={0}
-      w={290}
-      h={500}
-      color={"white"}
-      >
-        <PopoverArrow backgroundColor={"black"} />
-        <PopoverBody>
-          <Menu>
-          <MenuList>
-              <MenuItem>Vehiculos</MenuItem>
-              <MenuItem>Inmuebles</MenuItem>
-              <MenuItem>Supermercado</MenuItem>
-              <MenuItem>Tecnología</MenuItem>
-              <MenuItem>Accesorios para Vehículos</MenuItem>
-              <MenuItem>Electrodomésticos</MenuItem>
-              <MenuItem>Hogar Muebles</MenuItem>
-              <MenuItem>Belleza y cuidado personal</MenuItem>
-              <MenuItem>Moda</MenuItem>
-              <MenuItem>Deportes y Fitness</MenuItem>
-              <MenuItem>Herramientas</MenuItem>
-              <MenuItem>Construcción</MenuItem>
-              <MenuItem>Compra Internacional</MenuItem>
-              <MenuItem>Farmacias</MenuItem>
-              <MenuItem>Salud y Equipamiento Médico</MenuItem>
-              <MenuItem>Productos Sustentables</MenuItem>
-              <MenuItem>Industrias y Oficinas</MenuItem>
-              <MenuItem>Ver más categorias</MenuItem>
-            </MenuList>
-          </Menu>
-        </PopoverBody>
-      </PopoverContent>
-    </Popover>
-                {/* <BreadcrumbLink
-                  href="#"
-                  display={"flex"}
-                  alignItems={"center"}
-                  gap={"2"}
-                >
-
-      
-                  Categorias
-                  <Icon
-                    as={MdKeyboardArrowDown}
-                    position={"relative"}
-                    top={"2px"}
-                    w={"12px"}
-                    h={"12px"}
-                  />
-                </BreadcrumbLink> */}
+                <Popover>
+                  <PopoverTrigger>
+                    <BreadcrumbLink
+                      display={"flex"}
+                      alignItems={"center"}
+                      gap={"2"}
+                      _hover={{ textDecoration: "none" }}
+                    >
+                      Categorías
+                      <Icon
+                        as={MdKeyboardArrowDown}
+                        position={"relative"}
+                        top={"2px"}
+                        w={"12px"}
+                        h={"12px"}
+                      
+                      />
+                    </BreadcrumbLink>
+                  </PopoverTrigger>
+                  <PopoverContent
+                    bg={"#333"}
+                    border={0}
+                    w={350}
+                    h={500}
+                    color={"#fff"}
+                    display={"block"}
+                    padding={"10px 36px"}
+                    lineHeight={"2.59"}
+                    maxW={"260px"}
+                    overflow={"hidden"}
+                  >
+                  <PopoverArrow bg={"#333"} />
+                    
+                          Vehiculos
+                          Inmuebles
+                          Supermercado
+                          Tecnología
+                          Accesorios para Vehículos
+                          Electrodomésticos
+                          Hogar Muebles
+                          Belleza y cuidado personal
+                          Moda
+                          Deportes y Fitness
+                          Herramientas
+                          Construcción
+                          Compra Internacional
+                          Farmacias
+                          Salud y Equipamiento Médico
+                          Productos Sustentables
+                          Industrias y Oficinas
+                          Ver más categorias
+                      
+                  </PopoverContent>
+                </Popover>
               </BreadcrumbItem>
 
               <BreadcrumbItem>
@@ -205,23 +209,27 @@ export default function Navbar(): JSX.Element {
               <BreadcrumbItem isCurrentPage>
                 <BreadcrumbLink href="#">
                   <span
-                   style={{
-                    position: "absolute",
-                    left: "auto",
-                    right:"auto",
-                    marginLeft: "29px",
-                    marginTop:"-6px",
-                    backgroundColor: "#3483fa",
-                    borderRadius: "8px",
-                    fontWeight: "bolder",
-                    textTransform: "uppercase",
-                    fontSize: "8px",
-                    padding: "1px 3px",
-                    lineHeight: "1em",
-                    color: "#fff",
-                    display: "inline-block",
-                }}
-                >nuevo</span>Supermercado</BreadcrumbLink>
+                    style={{
+                      position: "absolute",
+                      left: "auto",
+                      right: "auto",
+                      marginLeft: "29px",
+                      marginTop: "-6px",
+                      backgroundColor: "#3483fa",
+                      borderRadius: "8px",
+                      fontWeight: "bolder",
+                      textTransform: "uppercase",
+                      fontSize: "8px",
+                      padding: "1px 3px",
+                      lineHeight: "1em",
+                      color: "#fff",
+                      display: "inline-block",
+                    }}
+                  >
+                    nuevo
+                  </span>
+                  Supermercado
+                </BreadcrumbLink>
               </BreadcrumbItem>
 
               <BreadcrumbItem isCurrentPage>
@@ -245,12 +253,8 @@ export default function Navbar(): JSX.Element {
               gap={"1"}
               cursor="pointer"
             >
-              <Icon 
-                as={HiOutlineUser}
-                w={"20px"}
-                h={"20px"}
-               /> Mariela
-               <Icon
+              <Icon as={HiOutlineUser} w={"20px"} h={"20px"} /> Mariela
+              <Icon
                 as={MdKeyboardArrowDown}
                 color={"GrayText"}
                 w={"12px"}
@@ -274,21 +278,21 @@ export default function Navbar(): JSX.Element {
             <WrapItem>
               <Wrap>
                 <StackItem>
-                  <span style={{
-                     position: "relative",
-                     top:"-38%",
-                     left:"60%",
-                     backgroundColor: "red",
-                     borderRadius: "3px",
-                     fontSize: "10.5px",
-                     padding: "0px 3.5px",
-                     color: "#fff",
-                  }}
-                  >1</span>
-                  <Icon as={TfiBell}
-                   h="20px"
-                   w="20px"
-                   cursor="pointer" />
+                  <span
+                    style={{
+                      position: "relative",
+                      top: "-38%",
+                      left: "60%",
+                      backgroundColor: "red",
+                      borderRadius: "3px",
+                      fontSize: "10.5px",
+                      padding: "0px 3.5px",
+                      color: "#fff",
+                    }}
+                  >
+                    1
+                  </span>
+                  <Icon as={TfiBell} h="20px" w="20px" cursor="pointer" />
                 </StackItem>
                 <WrapItem>
                   <Icon
