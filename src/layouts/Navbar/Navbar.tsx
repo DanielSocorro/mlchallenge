@@ -198,7 +198,7 @@ export default function Navbar(): JSX.Element {
                       <MenuItem as='a' href='#'>Supermercado</MenuItem>
                       <MenuItem as='a' href='#'>Tecnología</MenuItem>
                       <MenuItem as='a' href='#'>Accesorios para Vehículos</MenuItem>
-                      <MenuItem>Electrodomésticos</MenuItem>
+                      <MenuItem as='a' href='#'>Electrodomésticos</MenuItem>
                       <MenuItem>Hogar Muebles</MenuItem>
                       <MenuItem>Belleza y cuidado personal</MenuItem>
                       <MenuItem>Moda</MenuItem>
