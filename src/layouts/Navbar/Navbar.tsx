@@ -38,7 +38,7 @@ export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
   const navigate = useNavigate();
   const { onOpen, onClose, isOpen } = useDisclosure();
-  
+
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setNewQuery(e.currentTarget.value);
   };
@@ -51,11 +51,11 @@ export default function Navbar(): JSX.Element {
       navigate(`/search/?search=${newQuery}`);
     }
   };
-  
+
   const handleMouseEnter = useCallback(() => {
     onOpen();
   }, [onOpen]);
-  
+
   const handleMouseLeave = useCallback(() => {
     onClose();
   }, [onClose]);
@@ -151,27 +151,28 @@ export default function Navbar(): JSX.Element {
             <Breadcrumb separator={""}>
               <BreadcrumbItem>
                 <Popover
-                isOpen={isOpen}
-                onClose={onClose}
-                closeOnBlur={true}
-                closeOnEsc={true}>
+                  isOpen={isOpen}
+                  onClose={onClose}
+                  closeOnBlur={true}
+                  closeOnEsc={true}
+                >
                   <PopoverTrigger>
                     <BreadcrumbLink
                       display={"flex"}
                       alignItems={"center"}
                       gap={"2"}
-                      _hover={{ textDecoration: "none" }}
+                      _hover={{
+                        textDecoration: "none",
+                      }}
                       onMouseEnter={handleMouseEnter}
-                     
                     >
-                      Categorías
+                      Categoría
                       <Icon
                         as={MdKeyboardArrowDown}
                         position={"relative"}
                         top={"2px"}
                         w={"12px"}
                         h={"12px"}
-                      
                       />
                     </BreadcrumbLink>
                   </PopoverTrigger>
@@ -182,34 +183,36 @@ export default function Navbar(): JSX.Element {
                     h={"auto"}
                     color={"#fff"}
                     fontSize={"13px"}
-                    fontWeight={"bold"}
-                    lineHeight={"1.3"}
+                    fontWeight={"bolder"}
+                    lineHeight={"2.2"}
                     display={"block"}
-                    padding={"10px 20px"}
+                    padding={"12px 20px"}
                     overflow={"hidden"}
                     onMouseLeave={handleMouseLeave}
                   >
-                  <PopoverArrow bg={"#333"} />
                     <Menu>
-                         <MenuItem>Vehiculos</MenuItem>
-                          <MenuItem>Inmuebles</MenuItem>
-                          <MenuItem>Supermercado</MenuItem>
-                          <MenuItem>Tecnología</MenuItem>
-                          <MenuItem>Accesorios para Vehículos</MenuItem>
-                          <MenuItem>Electrodomésticos</MenuItem>
-                          <MenuItem>Hogar Muebles</MenuItem>
-                          <MenuItem>Belleza y cuidado personal</MenuItem>
-                          <MenuItem>Moda</MenuItem>
-                          <MenuItem>Deportes y Fitness</MenuItem>
-                          <MenuItem>Herramientas</MenuItem>
-                          <MenuItem>Construcción</MenuItem> 
-                          <MenuItem>Compra Internacional</MenuItem>
-                          <MenuItem>Farmacias</MenuItem>
-                          <MenuItem>Salud y Equipamiento Médico</MenuItem>
-                          <MenuItem>Productos Sustentables</MenuItem>
-                          <MenuItem>Industrias y Oficinas</MenuItem>
-                          <MenuItem>Ver más categorias</MenuItem>
-                          </Menu>
+          
+
+                      <MenuItem as='a' href='#'>Vehículos</MenuItem>
+                      <MenuItem as='a' href='#'>Inmuebles</MenuItem>
+                      <MenuItem as='a' href='#'>Supermercado</MenuItem>
+                      <MenuItem as='a' href='#'>Tecnología</MenuItem>
+                      <MenuItem as='a' href='#'>Accesorios para Vehículos</MenuItem>
+                      <MenuItem>Electrodomésticos</MenuItem>
+                      <MenuItem>Hogar Muebles</MenuItem>
+                      <MenuItem>Belleza y cuidado personal</MenuItem>
+                      <MenuItem>Moda</MenuItem>
+                      <MenuItem>Deportes y Fitness</MenuItem>
+                      <MenuItem>Herramientas</MenuItem>
+                      <MenuItem>Construcción</MenuItem>
+                      <MenuItem>Compra Internacional</MenuItem>
+                      <MenuItem>Farmacias</MenuItem>
+                      <MenuItem>Salud y Equipamiento Médico</MenuItem>
+                      <MenuItem>Productos Sustentables</MenuItem>
+                      <MenuItem>Industrias y Oficinas</MenuItem>
+                      <MenuItem>Ver más categorias</MenuItem>
+                  
+                    </Menu>
                   </PopoverContent>
                 </Popover>
               </BreadcrumbItem>

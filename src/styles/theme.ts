@@ -8,4 +8,13 @@ export const myNewTheme = extendTheme({
     lightBlue: "#DDE9FA",
     darkBlue: "#2968C8",
   },
+  components: {
+    MenuItem: {
+      baseStyle: {
+        _hover: {
+          bg: "darkBlue",
+        },
+      },
+    },
+  },
 });
