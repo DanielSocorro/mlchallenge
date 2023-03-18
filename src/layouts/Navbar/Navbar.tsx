@@ -23,10 +23,13 @@ import {
   PopoverContent,
   PopoverTrigger,
   useDisclosure,
+
 } from "@chakra-ui/react";
 import logo from "../../Images/logo.png";
 import promoImg from "../../Images/promo-img.webp";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import { Global, css } from '@emotion/react';
+
 import { GoLocation } from "react-icons/go";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi2";
@@ -59,7 +62,9 @@ export default function Navbar(): JSX.Element {
   const handleMouseLeave = useCallback(() => {
     onClose();
   }, [onClose]);
-
+  
+  
+  
   return (
     <Box bg="yellow" w={"100%"} h={"100px"} p={"8px 0"} gap={"20px"}>
       <VStack
@@ -70,6 +75,7 @@ export default function Navbar(): JSX.Element {
         maxW={"1200px"}
         justifyContent={"center"}
         alignItems={"flex-start"}
+  
       >
         <HStack w={"100%"} h={"40px"} justifyContent={"space-between"}>
           <HStack p={"0"} spacing={"6"}>
@@ -134,11 +140,12 @@ export default function Navbar(): JSX.Element {
           justifyContent={"space-between"}
           alignItems={"flex-end"}
           color={"var(--chakra-colors-blackAlpha-600)"}
+        
         >
           <HStack spacing={12}>
             <Stack alignItems="center" direction="row" spacing={1}>
               <Icon as={GoLocation} height={6} width={6} />
-              <Stack spacing={0}>
+              <Stack spacing={0} >
                 <Text color="blackAlpha.700" fontSize="xs" lineHeight="normal">
                   Enviar a Mariela
                 </Text>
@@ -148,16 +155,20 @@ export default function Navbar(): JSX.Element {
               </Stack>
             </Stack>
 
-            <Breadcrumb separator={""}>
+            <Breadcrumb 
+            separator={""}>
+  
               <BreadcrumbItem>
                 <Popover
                   isOpen={isOpen}
                   onClose={onClose}
                   closeOnBlur={true}
                   closeOnEsc={true}
+                  
                 >
                   <PopoverTrigger>
                     <BreadcrumbLink
+                    
                       display={"flex"}
                       alignItems={"center"}
                       gap={"2"}
@@ -184,13 +195,28 @@ export default function Navbar(): JSX.Element {
                     color={"#fff"}
                     fontSize={"13px"}
                     fontWeight={"bolder"}
-                    lineHeight={"2.2"}
+                    lineHeight={"2"}
                     display={"block"}
                     padding={"12px 20px"}
+                    zIndex={20}
                     overflow={"hidden"}
+                    className={"custom-popover-arrow"}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <Menu>
+               <Box
+    as="span"
+    className="custom-popover-arrow"
+    zIndex={3}
+    position="absolute"
+    transform="rotate(226deg)"
+    backgroundColor="#333"
+    top="-128%"
+    left="33px"
+    width="30px"
+    height="30px"
+  />
+                     
+                  <Menu>
           
 
                       <MenuItem as='a' href='#'>Vehículos</MenuItem>
@@ -199,20 +225,21 @@ export default function Navbar(): JSX.Element {
                       <MenuItem as='a' href='#'>Tecnología</MenuItem>
                       <MenuItem as='a' href='#'>Accesorios para Vehículos</MenuItem>
                       <MenuItem as='a' href='#'>Electrodomésticos</MenuItem>
-                      <MenuItem>Hogar Muebles</MenuItem>
-                      <MenuItem>Belleza y cuidado personal</MenuItem>
-                      <MenuItem>Moda</MenuItem>
-                      <MenuItem>Deportes y Fitness</MenuItem>
-                      <MenuItem>Herramientas</MenuItem>
-                      <MenuItem>Construcción</MenuItem>
-                      <MenuItem>Compra Internacional</MenuItem>
-                      <MenuItem>Farmacias</MenuItem>
-                      <MenuItem>Salud y Equipamiento Médico</MenuItem>
-                      <MenuItem>Productos Sustentables</MenuItem>
-                      <MenuItem>Industrias y Oficinas</MenuItem>
-                      <MenuItem>Ver más categorias</MenuItem>
+                      <MenuItem as='a' href='#'>Hogar Muebles</MenuItem>
+                      <MenuItem as='a' href='#'>Belleza y cuidado personal</MenuItem>
+                      <MenuItem as='a' href='#'>Moda</MenuItem>
+                      <MenuItem as='a' href='#'>Deportes y Fitness</MenuItem>
+                      <MenuItem as='a' href='#'>Herramientas</MenuItem>
+                      <MenuItem as='a' href='#'>Construcción</MenuItem>
+                      <MenuItem as='a' href='#'>Compra Internacional</MenuItem>
+                      <MenuItem as='a' href='#'>Farmacias</MenuItem>
+                      <MenuItem as='a' href='#'>Salud y Equipamiento Médico</MenuItem>
+                      <MenuItem as='a' href='#'>Productos Sustentables</MenuItem>
+                      <MenuItem as='a' href='#'>Industrias y Oficinas</MenuItem>
+                      <MenuItem as='a' href='#'>Ver más categorias</MenuItem>
                   
                     </Menu>
+                   
                   </PopoverContent>
                 </Popover>
               </BreadcrumbItem>
