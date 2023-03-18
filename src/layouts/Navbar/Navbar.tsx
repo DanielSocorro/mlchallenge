@@ -204,7 +204,8 @@ export default function Navbar(): JSX.Element {
   style={{
    
     width: "30px",
-    height: "30px"
+    height: "30px",
+    zIndex: 'initial'
   }}/>
 
                     
