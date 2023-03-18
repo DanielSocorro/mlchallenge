@@ -205,7 +205,8 @@ export default function Navbar(): JSX.Element {
    
     width: "30px",
     height: "30px",
-    zIndex: 'initial'
+    zIndex: 'initial',
+    left: '28px !important',
   }}/>
 
                     
