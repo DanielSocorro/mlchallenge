@@ -28,8 +28,6 @@ import {
 import logo from "../../Images/logo.png";
 import promoImg from "../../Images/promo-img.webp";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
-import { Global, css } from '@emotion/react';
-
 import { GoLocation } from "react-icons/go";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi2";
@@ -198,25 +196,19 @@ export default function Navbar(): JSX.Element {
                     lineHeight={"2"}
                     display={"block"}
                     padding={"12px 20px"}
-                    zIndex={20}
                     overflow={"hidden"}
-                    className={"custom-popover-arrow"}
                     onMouseLeave={handleMouseLeave}
                   >
-               <Box
-    as="span"
-    className="custom-popover-arrow"
-    zIndex={3}
-    position="absolute"
-    transform="rotate(226deg)"
-    backgroundColor="#333"
-    top="-128%"
-    left="33px"
-    width="30px"
-    height="30px"
-  />
-                     
-                  <Menu>
+                 
+  <PopoverArrow 
+  style={{
+   
+    width: "30px",
+    height: "30px"
+  }}/>
+
+                    
+                    <Menu>
           
 
                       <MenuItem as='a' href='#'>Vehículos</MenuItem>
@@ -239,7 +231,6 @@ export default function Navbar(): JSX.Element {
                       <MenuItem as='a' href='#'>Ver más categorias</MenuItem>
                   
                     </Menu>
-                   
                   </PopoverContent>
                 </Popover>
               </BreadcrumbItem>
