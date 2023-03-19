@@ -203,8 +203,8 @@ export default function Navbar(): JSX.Element {
   <PopoverArrow 
   style={{
    
-    width: "40px",
-    height: "40px",
+    width: "50px",
+    height: "50px",
     zIndex: 'initial',
     left: '28px !important',
   }}/>
