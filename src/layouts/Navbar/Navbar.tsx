@@ -63,7 +63,11 @@ export default function Navbar(): JSX.Element {
     onClose();
   }, [onClose]);
   
-  
+  const {
+    onOpen: onOpenSubMenu,
+    onClose: onCloseSubMenu,
+    isOpen: isOpenSubMenu,
+  } = useDisclosure();
   
   return (
     <Box bg="yellow" w={"100%"} h={"100px"} p={"8px 0"} gap={"20px"}>
@@ -220,7 +224,51 @@ export default function Navbar(): JSX.Element {
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Vehículos</MenuItem>
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Inmuebles</MenuItem>
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Supermercado</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Tecnología</MenuItem>
+         
+                      <MenuItem as="a" href="#">
+  <Popover
+    isOpen={isOpenSubMenu}
+    onClose={onCloseSubMenu}
+    closeOnBlur={true}
+    closeOnEsc={true}
+  >
+    <PopoverTrigger>
+      <Box
+        onMouseEnter={onOpenSubMenu}
+        onMouseLeave={onCloseSubMenu}
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
+        width="100%"
+        position="absolute"
+      >
+        Tecnología
+      </Box>
+    </PopoverTrigger>
+    <PopoverContent
+      bg={"white"}
+      border={"1px solid"}
+      borderColor={"gray.300"}
+      w={250}
+      h={"auto"}
+      color={"black"}
+      fontSize={"13px"}
+      fontWeight={"bolder"}
+      lineHeight={"2"}
+      display={"inline-flex"}
+      padding={"12px 20px"}
+      overflow={"hidden"}
+      onMouseLeave={onCloseSubMenu}
+      zIndex={3}
+      position="relative"
+    >
+      {/* Contenido del submenú aquí */}
+      <Text>Contenido de Tecnología</Text>
+    </PopoverContent>
+  </Popover>
+</MenuItem>
+
+
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Accesorios para Vehículos</MenuItem>
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Electrodomésticos</MenuItem>
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Hogar Muebles</MenuItem>
