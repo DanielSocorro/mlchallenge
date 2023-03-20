@@ -34,6 +34,7 @@ import { HiOutlineUser } from "react-icons/hi2";
 import { TfiBell } from "react-icons/tfi";
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowUpDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
 
 export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
@@ -189,7 +190,7 @@ export default function Navbar(): JSX.Element {
                   </PopoverTrigger>
                   <PopoverContent
                     bg={"#333"}
-                    border={0}
+                    border={"none"}
                     w={250}
                     h={"auto"}
                     color={"#fff"}
@@ -200,19 +201,18 @@ export default function Navbar(): JSX.Element {
                     padding={"12px 20px"}
                     overflow={"hidden"}
                     onMouseLeave={handleMouseLeave}
-                    position={"relative"}
-                    zIndex={"-1"}
+                  
                   >
                     
-                    <PopoverArrow 
-                      width='30px !important' 
-                      height='30px !important'
-                      left='23px !important'
-                      zIndex='1 !important'
-                      position='absolute'
-                      />
-                 
-                    
+                    <Box 
+                    position={"fixed"}
+                      width={5}
+                      height={5}
+                      bg={"#333"}
+                      transform="rotate(314deg)"
+                      top={"-6.5px"}
+                      right={"79px"}
+                    />
                     <Menu>
           
 
