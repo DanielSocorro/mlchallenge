@@ -1,5 +1,6 @@
 import {
   Box,
+  css,
   HStack,
   Stack,
   Image,
@@ -19,7 +20,7 @@ import {
   VStack,
   StackItem,
   Popover,
-  PopoverArrow,
+
   PopoverContent,
   PopoverTrigger,
   useDisclosure,
@@ -40,7 +41,7 @@ export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
   const navigate = useNavigate();
   const { onOpen, onClose, isOpen } = useDisclosure();
-
+  
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setNewQuery(e.currentTarget.value);
   };
@@ -216,24 +217,24 @@ export default function Navbar(): JSX.Element {
                     <Menu>
           
 
-                      <MenuItem as='a' href='#'>Vehículos</MenuItem>
-                      <MenuItem as='a' href='#'>Inmuebles</MenuItem>
-                      <MenuItem as='a' href='#'>Supermercado</MenuItem>
-                      <MenuItem as='a' href='#'>Tecnología</MenuItem>
-                      <MenuItem as='a' href='#'>Accesorios para Vehículos</MenuItem>
-                      <MenuItem as='a' href='#'>Electrodomésticos</MenuItem>
-                      <MenuItem as='a' href='#'>Hogar Muebles</MenuItem>
-                      <MenuItem as='a' href='#'>Belleza y cuidado personal</MenuItem>
-                      <MenuItem as='a' href='#'>Moda</MenuItem>
-                      <MenuItem as='a' href='#'>Deportes y Fitness</MenuItem>
-                      <MenuItem as='a' href='#'>Herramientas</MenuItem>
-                      <MenuItem as='a' href='#'>Construcción</MenuItem>
-                      <MenuItem as='a' href='#'>Compra Internacional</MenuItem>
-                      <MenuItem as='a' href='#'>Farmacias</MenuItem>
-                      <MenuItem as='a' href='#'>Salud y Equipamiento Médico</MenuItem>
-                      <MenuItem as='a' href='#'>Productos Sustentables</MenuItem>
-                      <MenuItem as='a' href='#'>Industrias y Oficinas</MenuItem>
-                      <MenuItem as='a' href='#'>Ver más categorias</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Vehículos</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Inmuebles</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Supermercado</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Tecnología</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Accesorios para Vehículos</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Electrodomésticos</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Hogar Muebles</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Belleza y cuidado personal</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Moda</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Deportes y Fitness</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Herramientas</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Construcción</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Compra Internacional</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Farmacias</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Salud y Equipamiento Médico</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Productos Sustentables</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Industrias y Oficinas</MenuItem>
+                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Ver más categorias</MenuItem>
                   
                     </Menu>
                   </PopoverContent>
