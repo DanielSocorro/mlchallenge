@@ -65,6 +65,7 @@ export default function Navbar(): JSX.Element {
   
   return (
     <Box bg="yellow" w={"100%"} h={"100px"} p={"8px 0"} gap={"20px"}>
+      
       <VStack
         p={"0"}
         w={"90%"}
@@ -75,6 +76,7 @@ export default function Navbar(): JSX.Element {
         alignItems={"flex-start"}
   
       >
+        
         <HStack w={"100%"} h={"40px"} justifyContent={"space-between"}>
           <HStack p={"0"} spacing={"6"}>
             <Box w={"170px"}>
@@ -198,17 +200,18 @@ export default function Navbar(): JSX.Element {
                     padding={"12px 20px"}
                     overflow={"hidden"}
                     onMouseLeave={handleMouseLeave}
+                    position={"relative"}
+                    zIndex={"-1"}
                   >
+                    
+                    <PopoverArrow 
+                      width='30px !important' 
+                      height='30px !important'
+                      left='23px !important'
+                      zIndex='1 !important'
+                      position='absolute'
+                      />
                  
-  <PopoverArrow 
-  style={{
-   
-    width: "50px",
-    height: "50px",
-    zIndex: 'initial',
-    left: '28px !important',
-  }}/>
-
                     
                     <Menu>
           
