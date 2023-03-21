@@ -240,7 +240,7 @@ export default function Navbar(): JSX.Element {
         alignItems="center"
         justifyContent="space-between"
         width="100%"
-        position="absolute"
+        position="relative"
       >
         Tecnología
       </Box>
