@@ -1,6 +1,6 @@
 import {
   Box,
-  css,
+
   HStack,
   Stack,
   Image,
@@ -33,15 +33,17 @@ import { GoLocation } from "react-icons/go";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi2";
 import { TfiBell } from "react-icons/tfi";
-import { useState, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowUpDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
+
 
 export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
   const navigate = useNavigate();
   const { onOpen, onClose, isOpen } = useDisclosure();
-  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const [isTechSubMenuOpen, setIsTechSubMenuOpen] = useState(false);
+
+
   
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setNewQuery(e.currentTarget.value);
@@ -65,13 +67,14 @@ export default function Navbar(): JSX.Element {
   }, [onClose]);
   
 
-  const handleSubMenuOpen = () => {
-    setIsSubMenuOpen(true);
+  const handleTechSubMenuOpen = () => {
+    setIsTechSubMenuOpen(true);
+  };
+  
+  const handleTechSubMenuClose = () => {
+    setIsTechSubMenuOpen(false);
   };
 
-  const handleSubMenuClose = () => {
-    setIsSubMenuOpen(false);
-  };
   
   return (
     <Box bg="yellow" w={"100%"} h={"100px"} p={"8px 0"} gap={"20px"}>
@@ -228,30 +231,66 @@ export default function Navbar(): JSX.Element {
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Vehículos</MenuItem>
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Inmuebles</MenuItem>
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Supermercado</MenuItem>
-                      <MenuItem
-          as="a"
-          href="#"
-          onMouseEnter={handleSubMenuOpen}
-          onMouseLeave={handleSubMenuClose}
-        >
-          Tecnología
-          {isSubMenuOpen && (
-        <Box
+                      
+                      <Box position="relative" zIndex={9999}>
+  <MenuItem
+    as="a"
+    href="#"
+    _hover={{ background: "blue", color: "white" }}
+    onMouseEnter={handleTechSubMenuOpen}
+    onMouseLeave={handleTechSubMenuClose}
+  >
+    Tecnología
+    <Box
+      onMouseEnter={handleTechSubMenuOpen}
+      onMouseLeave={handleTechSubMenuClose}
+      _hover={{ cursor: "pointer" }}
+      position="fixed"
+      left="100%"
+      top="0"
+      zIndex={9999}
+    >
+      <Popover
+        isOpen={isTechSubMenuOpen}
+        onClose={handleTechSubMenuClose}
+        closeOnBlur={true}
+        closeOnEsc={true}
+      >
+        <PopoverContent
+          bg={"white"}
+          border={"1px solid"}
+          borderColor={"gray.200"}
+          w={250}
+          h={"auto"}
+          color={"black"}
+          fontSize={"13px"}
+          fontWeight={"bolder"}
+          lineHeight={"2"}
+          display={"flex"}
+          padding={"12px 20px"}
+          overflow={"hidden"}
           position="absolute"
           left="100%"
-          top={0}
-          w={250}
-          h="100%"
-          bgColor="white"
-          boxShadow="md"
-          zIndex={3}
-          onMouseLeave={handleSubMenuClose}
+          top="0"
+          zIndex={10000}
         >
-          {/* Contenido del submenú aquí */}
-          <Text>Contenido de Tecnología</Text>
-        </Box>
-      )}
-        </MenuItem>
+          <Menu>
+            <MenuItem
+              as="a"
+              href="#"
+              _hover={{ background: "gray.100", color: "black" }}
+            >
+              Computadoras
+            </MenuItem>
+            {/* Agrega más categorías de Tecnología aquí */}
+          </Menu>
+        </PopoverContent>
+        
+      </Popover>
+    </Box>
+  </MenuItem>
+</Box>
+
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Accesorios para Vehículos</MenuItem>
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Electrodomésticos</MenuItem>
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Hogar Muebles</MenuItem>
@@ -268,7 +307,6 @@ export default function Navbar(): JSX.Element {
                       <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Ver más categorias</MenuItem>
                   
                     </Menu>
-                    
                   </PopoverContent>
                 </Popover>
               </BreadcrumbItem>
