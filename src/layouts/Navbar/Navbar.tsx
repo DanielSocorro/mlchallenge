@@ -1,6 +1,5 @@
 import {
   Box,
-
   HStack,
   Stack,
   Image,
@@ -20,11 +19,9 @@ import {
   VStack,
   StackItem,
   Popover,
-
   PopoverContent,
   PopoverTrigger,
   useDisclosure,
-
 } from "@chakra-ui/react";
 import logo from "../../Images/logo.png";
 import promoImg from "../../Images/promo-img.webp";
@@ -36,15 +33,12 @@ import { TfiBell } from "react-icons/tfi";
 import { useState, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
   const navigate = useNavigate();
   const { onOpen, onClose, isOpen } = useDisclosure();
   const [isTechSubMenuOpen, setIsTechSubMenuOpen] = useState(false);
 
-
-  
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setNewQuery(e.currentTarget.value);
   };
@@ -65,20 +59,17 @@ export default function Navbar(): JSX.Element {
   const handleMouseLeave = useCallback(() => {
     onClose();
   }, [onClose]);
-  
 
   const handleTechSubMenuOpen = () => {
     setIsTechSubMenuOpen(true);
   };
-  
+
   const handleTechSubMenuClose = () => {
     setIsTechSubMenuOpen(false);
   };
 
-  
   return (
     <Box bg="yellow" w={"100%"} h={"100px"} p={"8px 0"} gap={"20px"}>
-      
       <VStack
         p={"0"}
         w={"90%"}
@@ -87,9 +78,7 @@ export default function Navbar(): JSX.Element {
         maxW={"1200px"}
         justifyContent={"center"}
         alignItems={"flex-start"}
-  
       >
-        
         <HStack w={"100%"} h={"40px"} justifyContent={"space-between"}>
           <HStack p={"0"} spacing={"6"}>
             <Box w={"170px"}>
@@ -153,12 +142,11 @@ export default function Navbar(): JSX.Element {
           justifyContent={"space-between"}
           alignItems={"flex-end"}
           color={"var(--chakra-colors-blackAlpha-600)"}
-        
         >
           <HStack spacing={12}>
             <Stack alignItems="center" direction="row" spacing={1}>
               <Icon as={GoLocation} height={6} width={6} />
-              <Stack spacing={0} >
+              <Stack spacing={0}>
                 <Text color="blackAlpha.700" fontSize="xs" lineHeight="normal">
                   Enviar a Mariela
                 </Text>
@@ -168,20 +156,16 @@ export default function Navbar(): JSX.Element {
               </Stack>
             </Stack>
 
-            <Breadcrumb 
-            separator={""}>
-  
+            <Breadcrumb separator={""}>
               <BreadcrumbItem>
                 <Popover
                   isOpen={isOpen}
                   onClose={onClose}
                   closeOnBlur={true}
                   closeOnEsc={true}
-                  
                 >
                   <PopoverTrigger>
                     <BreadcrumbLink
-                    
                       display={"flex"}
                       alignItems={"center"}
                       gap={"2"}
@@ -213,11 +197,9 @@ export default function Navbar(): JSX.Element {
                     padding={"12px 20px"}
                     overflow={"hidden"}
                     onMouseLeave={handleMouseLeave}
-                  
                   >
-                    
-                    <Box 
-                    position={"fixed"}
+                    <Box
+                      position={"fixed"}
                       width={5}
                       height={5}
                       bg={"#333"}
@@ -226,97 +208,211 @@ export default function Navbar(): JSX.Element {
                       right={"79px"}
                     />
                     <Menu>
-          
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Vehículos
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Inmuebles
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Supermercado
+                      </MenuItem>
 
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Vehículos</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Inmuebles</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Supermercado</MenuItem>
-                      
                       <Box position="relative" zIndex={9999}>
-  <MenuItem
-    as="a"
-    href="#"
-    _hover={{ background: "blue", color: "white" }}
-    onMouseEnter={handleTechSubMenuOpen}
-    onMouseLeave={handleTechSubMenuClose}
-  >
-    Tecnología
-  
-          <Icon
-            as={MdKeyboardArrowRight}
-            position={"relative"}
-            top={"2px"}
-            w={"12px"}
-            h={"12px"}
-            ml={1}
-            left={"100px"}
-          />
-        
-    <Box
-      onMouseEnter={handleTechSubMenuOpen}
-      onMouseLeave={handleTechSubMenuClose}
-      _hover={{ cursor: "pointer" }}
-      position="fixed"
-      left="100%"
-      top="0"
-      zIndex={9999}
-    >
-      <Popover
-        isOpen={isTechSubMenuOpen}
-        onClose={handleTechSubMenuClose}
-        closeOnBlur={true}
-        closeOnEsc={true}
-      >
-        <PopoverContent
-          bg={"white"}
-          border={"1px solid"}
-          borderColor={"gray.200"}
-          w={250}
-          h={"auto"}
-          color={"black"}
-          fontSize={"13px"}
-          fontWeight={"bolder"}
-          lineHeight={"2"}
-          display={"flex"}
-          padding={"12px 20px"}
-          overflow={"hidden"}
-          position="absolute"
-          left="100%"
-          top="0"
-          zIndex={10000}
-        >
-          
-          <Menu>
-            <MenuItem
-              as="a"
-              href="#"
-              _hover={{ background: "gray.100", color: "black" }}
-            >
-              Computadoras
-            </MenuItem>
-            {/* Agrega más categorías de Tecnología aquí */}
-          </Menu>
-        </PopoverContent>
-      </Popover>
-    </Box>
-  </MenuItem>
-</Box>
+                        <MenuItem
+                          as="a"
+                          href="#"
+                          _hover={{ background: "blue", color: "white" }}
+                          onMouseEnter={handleTechSubMenuOpen}
+                          onMouseLeave={handleTechSubMenuClose}
+                        >
+                          Tecnología
+                          <Icon
+                            as={MdKeyboardArrowRight}
+                            position={"relative"}
+                            top={"2px"}
+                            w={"12px"}
+                            h={"12px"}
+                            ml={1}
+                            left={"100px"}
+                          />
+                          <Box
+                            onMouseEnter={handleTechSubMenuOpen}
+                            onMouseLeave={() => {
+                              if (isTechSubMenuOpen) {
+                                handleTechSubMenuClose();
+                              } else {
+                                handleMouseEnter();
+                              }
+                            }}
+                            _hover={{ cursor: "pointer" }}
+                            position="fixed"
+                            left="100%"
+                            top="0"
+                            zIndex={9999}
+                          >
+                            <Popover
+                              isOpen={isTechSubMenuOpen}
+                              onClose={handleTechSubMenuClose}
+                              closeOnBlur={true}
+                              closeOnEsc={true}
+                            >
+                              <PopoverContent
+                                bg={"white"}
+                                border={"1px solid"}
+                                borderColor={"gray.200"}
+                                w={780}
+                                h={725}
+                                color={"black"}
+                                fontSize={"13px"}
+                                fontWeight={"bolder"}
+                                lineHeight={"2"}
+                                display={"flex"}
+                                padding={"12px 20px"}
+                                overflow={"hidden"}
+                                position="absolute"
+                                left="100%"
+                                top="0"
+                                zIndex={10000}
+                              >
+                                <Box mb={"10px"}>
+            <Text fontWeight={"bold"} fontSize={"20px"} lineHeight={"2"}>
+              Tecnología
+            </Text>
+            <Box borderBottom={"1px solid gray"} my={"10px"} />
+          </Box>
+          <Box mb={"10px"}>
+            <Text fontWeight={"bold"} fontSize={"16px"}>
+              Celulares y telefonía
+            </Text>
+            <Text fontSize={"12px"} color={"gray.500"}>
+              celulares y smartphones
+            </Text>
+          </Box>
+          <Box mb={"10px"}>
+            <Text fontWeight={"bold"} fontSize={"16px"}>
+              Accesorios para celulares
+            </Text>
+            <Text fontSize={"12px"} color={"gray.500"}>
+              cables, cargadores, protectores, etc.
+            </Text>
+          </Box>
+                              </PopoverContent>
+                            </Popover>
+                          </Box>
+                        </MenuItem>
+                      </Box>
 
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Accesorios para Vehículos</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Electrodomésticos</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Hogar Muebles</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Belleza y cuidado personal</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Moda</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Deportes y Fitness</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Herramientas</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Construcción</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Compra Internacional</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Farmacias</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Salud y Equipamiento Médico</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Productos Sustentables</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Industrias y Oficinas</MenuItem>
-                      <MenuItem as='a' href='#'  _hover={{background: 'blue', color: 'white'}}>Ver más categorias</MenuItem>
-                  
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Accesorios para Vehículos
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Electrodomésticos
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Hogar Muebles
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Belleza y cuidado personal
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Moda
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Deportes y Fitness
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Herramientas
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Construcción
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Compra Internacional
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Farmacias
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Salud y Equipamiento Médico
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Productos Sustentables
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Industrias y Oficinas
+                      </MenuItem>
+                      <MenuItem
+                        as="a"
+                        href="#"
+                        _hover={{ background: "blue", color: "white" }}
+                      >
+                        Ver más categorias
+                      </MenuItem>
                     </Menu>
                   </PopoverContent>
                 </Popover>
