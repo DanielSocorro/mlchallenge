@@ -30,7 +30,7 @@ import logo from "../../Images/logo.png";
 import promoImg from "../../Images/promo-img.webp";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi2";
 import { TfiBell } from "react-icons/tfi";
 import { useState, useRef, useCallback } from "react";
@@ -241,6 +241,17 @@ export default function Navbar(): JSX.Element {
     onMouseLeave={handleTechSubMenuClose}
   >
     Tecnología
+  
+          <Icon
+            as={MdKeyboardArrowRight}
+            position={"relative"}
+            top={"2px"}
+            w={"12px"}
+            h={"12px"}
+            ml={1}
+            left={"100px"}
+          />
+        
     <Box
       onMouseEnter={handleTechSubMenuOpen}
       onMouseLeave={handleTechSubMenuClose}
@@ -274,6 +285,7 @@ export default function Navbar(): JSX.Element {
           top="0"
           zIndex={10000}
         >
+          
           <Menu>
             <MenuItem
               as="a"
@@ -285,7 +297,6 @@ export default function Navbar(): JSX.Element {
             {/* Agrega más categorías de Tecnología aquí */}
           </Menu>
         </PopoverContent>
-        
       </Popover>
     </Box>
   </MenuItem>
