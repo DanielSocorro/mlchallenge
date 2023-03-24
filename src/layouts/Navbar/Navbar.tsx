@@ -30,7 +30,7 @@ import { GoLocation } from "react-icons/go";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi2";
 import { TfiBell } from "react-icons/tfi";
-import { useState, useRef, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar(): JSX.Element {
@@ -169,10 +169,9 @@ export default function Navbar(): JSX.Element {
                       display={"flex"}
                       alignItems={"center"}
                       gap={"2"}
-                      _hover={{
-                        textDecoration: "none",
-                      }}
+                    
                       onMouseEnter={handleMouseEnter}
+                      
                     >
                       Categoría
                       <Icon
@@ -196,8 +195,7 @@ export default function Navbar(): JSX.Element {
                     display={"block"}
                     padding={"12px 20px"}
                     overflow={"hidden"}
-                    onMouseLeave={handleMouseLeave}
-                  >
+                    >
                     <Box
                       position={"fixed"}
                       width={5}
@@ -206,37 +204,42 @@ export default function Navbar(): JSX.Element {
                       transform="rotate(314deg)"
                       top={"-6.5px"}
                       right={"79px"}
-                    />
+                      />
                     <Menu>
+                     
                       <MenuItem
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
-                      >
+                        >
                         Vehículos
                       </MenuItem>
                       <MenuItem
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
-                      >
+                        onMouseEnter={handleMouseEnter}
+                        >
                         Inmuebles
                       </MenuItem>
                       <MenuItem
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleTechSubMenuClose}
                       >
                         Supermercado
                       </MenuItem>
 
-                      <Box position="relative" zIndex={9999}>
+                      <Box position="relative" zIndex={9999}
+                       onMouseEnter={handleTechSubMenuOpen}
+                      >
                         <MenuItem
                           as="a"
                           href="#"
                           _hover={{ background: "blue", color: "white" }}
-                          onMouseEnter={handleTechSubMenuOpen}
-                          onMouseLeave={handleTechSubMenuClose}
+                         
                         >
                           Tecnología
                           <Icon
@@ -249,14 +252,7 @@ export default function Navbar(): JSX.Element {
                             left={"100px"}
                           />
                           <Box
-                            onMouseEnter={handleTechSubMenuOpen}
-                            onMouseLeave={() => {
-                              if (isTechSubMenuOpen) {
-                                handleTechSubMenuClose();
-                              } else {
-                                handleMouseEnter();
-                              }
-                            }}
+                             
                             _hover={{ cursor: "pointer" }}
                             position="fixed"
                             left="100%"
@@ -268,6 +264,7 @@ export default function Navbar(): JSX.Element {
                               onClose={handleTechSubMenuClose}
                               closeOnBlur={true}
                               closeOnEsc={true}
+                              
                             >
                               <PopoverContent
                                 bg={"white"}
@@ -286,29 +283,39 @@ export default function Navbar(): JSX.Element {
                                 left="100%"
                                 top="0"
                                 zIndex={10000}
+                            
+                               
                               >
                                 <Box mb={"10px"}>
-            <Text fontWeight={"bold"} fontSize={"20px"} lineHeight={"2"}>
-              Tecnología
-            </Text>
-            <Box borderBottom={"1px solid gray"} my={"10px"} />
-          </Box>
-          <Box mb={"10px"}>
-            <Text fontWeight={"bold"} fontSize={"16px"}>
-              Celulares y telefonía
-            </Text>
-            <Text fontSize={"12px"} color={"gray.500"}>
-              celulares y smartphones
-            </Text>
-          </Box>
-          <Box mb={"10px"}>
-            <Text fontWeight={"bold"} fontSize={"16px"}>
-              Accesorios para celulares
-            </Text>
-            <Text fontSize={"12px"} color={"gray.500"}>
-              cables, cargadores, protectores, etc.
-            </Text>
-          </Box>
+                                  <Text
+                                  onMouseLeave={handleTechSubMenuClose}
+                                    fontWeight={"bold"}
+                                    fontSize={"20px"}
+                                    lineHeight={"2"}
+                                  >
+                                    Tecnología
+                                  </Text>
+                                  <Box
+                                    borderBottom={"1px solid gray"}
+                                    my={"10px"}
+                                  />
+                                </Box>
+                                <Box mb={"10px"}>
+                                  <Text fontWeight={"bold"} fontSize={"16px"}>
+                                    Celulares y telefonía
+                                  </Text>
+                                  <Text fontSize={"12px"} color={"gray.500"}>
+                                    celulares y smartphones
+                                  </Text>
+                                </Box>
+                                <Box mb={"10px"}>
+                                  <Text fontWeight={"bold"} fontSize={"16px"}>
+                                    Accesorios para celulares
+                                  </Text>
+                                  <Text fontSize={"12px"} color={"gray.500"}>
+                                    cables, cargadores, protectores, etc.
+                                  </Text>
+                                </Box>
                               </PopoverContent>
                             </Popover>
                           </Box>
@@ -319,6 +326,7 @@ export default function Navbar(): JSX.Element {
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
+                        onMouseEnter={handleMouseEnter}
                       >
                         Accesorios para Vehículos
                       </MenuItem>
@@ -326,6 +334,7 @@ export default function Navbar(): JSX.Element {
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
+                      
                       >
                         Electrodomésticos
                       </MenuItem>
