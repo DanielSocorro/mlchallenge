@@ -68,6 +68,11 @@ export default function Navbar(): JSX.Element {
     setIsTechSubMenuOpen(false);
   };
 
+  function handleBothActions() {
+    handleMouseEnter();
+    handleTechSubMenuClose();
+  }
+
   return (
     <Box bg="yellow" w={"100%"} h={"100px"} p={"8px 0"} gap={"20px"}>
       <VStack
@@ -169,9 +174,8 @@ export default function Navbar(): JSX.Element {
                       display={"flex"}
                       alignItems={"center"}
                       gap={"2"}
-                    
                       onMouseEnter={handleMouseEnter}
-                      
+                     
                     >
                       Categoría
                       <Icon
@@ -195,7 +199,8 @@ export default function Navbar(): JSX.Element {
                     display={"block"}
                     padding={"12px 20px"}
                     overflow={"hidden"}
-                    >
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <Box
                       position={"fixed"}
                       width={5}
@@ -204,42 +209,41 @@ export default function Navbar(): JSX.Element {
                       transform="rotate(314deg)"
                       top={"-6.5px"}
                       right={"79px"}
-                      />
+                    />
                     <Menu>
-                     
                       <MenuItem
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
-                        >
+                      >
                         Vehículos
                       </MenuItem>
                       <MenuItem
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
-                        onMouseEnter={handleMouseEnter}
-                        >
+                      
+                      >
                         Inmuebles
                       </MenuItem>
                       <MenuItem
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleTechSubMenuClose}
+                        onMouseEnter={handleBothActions}
                       >
                         Supermercado
                       </MenuItem>
 
-                      <Box position="relative" zIndex={9999}
-                       onMouseEnter={handleTechSubMenuOpen}
+                      <Box
+                        position="relative"
+                    
                       >
                         <MenuItem
                           as="a"
                           href="#"
                           _hover={{ background: "blue", color: "white" }}
-                         
+                          onMouseEnter={handleTechSubMenuOpen}
                         >
                           Tecnología
                           <Icon
@@ -252,19 +256,18 @@ export default function Navbar(): JSX.Element {
                             left={"100px"}
                           />
                           <Box
-                             
                             _hover={{ cursor: "pointer" }}
                             position="fixed"
                             left="100%"
                             top="0"
                             zIndex={9999}
+                           
                           >
                             <Popover
-                              isOpen={isTechSubMenuOpen}
-                              onClose={handleTechSubMenuClose}
+                             isOpen={isTechSubMenuOpen}
+                             onClose={handleTechSubMenuClose}
                               closeOnBlur={true}
                               closeOnEsc={true}
-                              
                             >
                               <PopoverContent
                                 bg={"white"}
@@ -283,12 +286,11 @@ export default function Navbar(): JSX.Element {
                                 left="100%"
                                 top="0"
                                 zIndex={10000}
-                            
                                
                               >
                                 <Box mb={"10px"}>
                                   <Text
-                                  onMouseLeave={handleTechSubMenuClose}
+                              
                                     fontWeight={"bold"}
                                     fontSize={"20px"}
                                     lineHeight={"2"}
@@ -326,7 +328,8 @@ export default function Navbar(): JSX.Element {
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
-                        onMouseEnter={handleMouseEnter}
+                       /*  onMouseEnter={handleTechSubMenuClose} */
+                         onMouseEnter={handleBothActions}
                       >
                         Accesorios para Vehículos
                       </MenuItem>
@@ -334,7 +337,6 @@ export default function Navbar(): JSX.Element {
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
-                      
                       >
                         Electrodomésticos
                       </MenuItem>
