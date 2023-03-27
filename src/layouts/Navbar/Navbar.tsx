@@ -500,13 +500,13 @@ export default function Navbar(): JSX.Element {
   <Icon as={HiOutlineUser} w={"20px"} h={"20px"} />
   <Popover trigger="hover" placement="bottom-start">
     <PopoverTrigger>
-      <Box cursor="pointer" marginTop={0}>
+      <Box cursor="pointer">
         Mariela
         <Icon
           as={MdKeyboardArrowDown}
           color={"GrayText"}
           w={"12px"}
-          h={"24px"}
+          h={"12px"}
           marginLeft={"1px"}
           marginRight={"8px"}
         />
