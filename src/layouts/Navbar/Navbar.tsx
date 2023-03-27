@@ -8,6 +8,7 @@ import {
   Text,
   Menu,
   MenuItem,
+  MenuList,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -478,12 +479,13 @@ export default function Navbar(): JSX.Element {
           </HStack>
 
           <Wrap color={"var(--chakra-colors-blackAlpha-800)"}>
-            <WrapItem
+           {/*  <WrapItem
               display={"flex"}
               alignItems={"flex-start"}
               gap={"1"}
               cursor="pointer"
             >
+              
               <Icon as={HiOutlineUser} w={"20px"} h={"20px"} /> Mariela
               <Icon
                 as={MdKeyboardArrowDown}
@@ -493,7 +495,50 @@ export default function Navbar(): JSX.Element {
                 marginLeft={"1px"}
                 marginRight={"8px"}
               />
-            </WrapItem>
+            </WrapItem> */}
+            <WrapItem display={"flex"} alignItems={"flex-start"} gap={"1"}>
+  <Icon as={HiOutlineUser} w={"20px"} h={"20px"} />
+  <Popover trigger="hover" placement="bottom-start">
+    <PopoverTrigger>
+      <Box cursor="pointer" marginTop={0}>
+        Mariela
+        <Icon
+          as={MdKeyboardArrowDown}
+          color={"GrayText"}
+          w={"12px"}
+          h={"24px"}
+          marginLeft={"1px"}
+          marginRight={"8px"}
+        />
+      </Box>
+    </PopoverTrigger>
+    <PopoverContent
+      bg="white"
+      color="black"
+      fontSize="md"
+      borderColor="gray.200"
+      boxShadow="md"
+    >
+      <VStack align="start" spacing={2} padding={2}>
+        <Box p={2}>Compras</Box>
+        <Box p={2}>Preguntas</Box>
+        <Box p={2}>OpinionesNUEVO</Box>
+        <Box p={2}>Créditos</Box>
+        <Box p={2}>Películas y series</Box>
+        <Box p={2}>Vender</Box>
+        <Box p={2}>Resumen</Box>
+        <Box p={2}>Novedades</Box>
+        <Box p={2}>Publicaciones</Box>
+        <Box p={2}>Ventas</Box>
+        <Box p={2}>Publicidad</Box>
+        <Box p={2}>Facturación</Box>
+        <Box p={2}>Mercado Shops</Box>
+        <Box p={2}>Mi perfil</Box>
+      </VStack>
+    </PopoverContent>
+  </Popover>
+</WrapItem>
+
             <WrapItem cursor="pointer">Mis compras</WrapItem>
             <WrapItem cursor="pointer">
               Favoritos
