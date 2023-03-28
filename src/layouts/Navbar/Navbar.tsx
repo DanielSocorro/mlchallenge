@@ -514,7 +514,7 @@ export default function Navbar(): JSX.Element {
                       top={"-6.5px"}
                       left={"35px"}
                     />
-      <Box padding={2}>
+      <Box margin={2} padding={2}>
         <Box p={2}>Compras</Box>
         <Box p={2}>Preguntas</Box>
         <Box p={2}>OpinionesNUEVO</Box>
