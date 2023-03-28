@@ -506,13 +506,13 @@ export default function Navbar(): JSX.Element {
       right={"140px"}
     >
       <Box
-                      position={"fixed"}
-                      width={5}
-                      height={5}
+                      position={"sticky"}
+                      width={10}
+                      height={10}
                       bg={"white"}
                       transform="rotate(314deg)"
                       top={"-6.5px"}
-                      left={"45px"}
+                      left={"35px"}
                     />
       <Box padding={2}>
         <Box p={2}>Compras</Box>
