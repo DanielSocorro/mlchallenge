@@ -479,23 +479,6 @@ export default function Navbar(): JSX.Element {
           </HStack>
 
           <Wrap color={"var(--chakra-colors-blackAlpha-800)"}>
-           {/*  <WrapItem
-              display={"flex"}
-              alignItems={"flex-start"}
-              gap={"1"}
-              cursor="pointer"
-            >
-              
-              <Icon as={HiOutlineUser} w={"20px"} h={"20px"} /> Mariela
-              <Icon
-                as={MdKeyboardArrowDown}
-                color={"GrayText"}
-                w={"12px"}
-                h={"24px"}
-                marginLeft={"1px"}
-                marginRight={"8px"}
-              />
-            </WrapItem> */}
             <WrapItem display={"flex"} alignItems={"flex-start"} gap={"1"}>
   <Icon as={HiOutlineUser} w={"20px"} h={"20px"} />
   <Popover trigger="hover" placement="bottom-start">
@@ -509,17 +492,29 @@ export default function Navbar(): JSX.Element {
           h={"12px"}
           marginLeft={"1px"}
           marginRight={"8px"}
+          marginTop={"3px"}
         />
       </Box>
     </PopoverTrigger>
+    
     <PopoverContent
       bg="white"
       color="black"
       fontSize="md"
       borderColor="gray.200"
       boxShadow="md"
+      right={"140px"}
     >
-      <VStack align="start" spacing={2} padding={2}>
+      <Box
+                      position={"fixed"}
+                      width={5}
+                      height={5}
+                      bg={"white"}
+                      transform="rotate(314deg)"
+                      top={"-6.5px"}
+                      left={"45px"}
+                    />
+      <Box padding={2}>
         <Box p={2}>Compras</Box>
         <Box p={2}>Preguntas</Box>
         <Box p={2}>OpinionesNUEVO</Box>
@@ -534,7 +529,7 @@ export default function Navbar(): JSX.Element {
         <Box p={2}>Facturación</Box>
         <Box p={2}>Mercado Shops</Box>
         <Box p={2}>Mi perfil</Box>
-      </VStack>
+      </Box>
     </PopoverContent>
   </Popover>
 </WrapItem>
