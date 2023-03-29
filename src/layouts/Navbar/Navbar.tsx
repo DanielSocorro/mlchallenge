@@ -8,7 +8,6 @@ import {
   Text,
   Menu,
   MenuItem,
-  MenuList,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -176,7 +175,6 @@ export default function Navbar(): JSX.Element {
                       alignItems={"center"}
                       gap={"2"}
                       onMouseEnter={handleMouseEnter}
-                     
                     >
                       Categoría
                       <Icon
@@ -223,7 +221,6 @@ export default function Navbar(): JSX.Element {
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
-                      
                       >
                         Inmuebles
                       </MenuItem>
@@ -236,10 +233,7 @@ export default function Navbar(): JSX.Element {
                         Supermercado
                       </MenuItem>
 
-                      <Box
-                        position="relative"
-                    
-                      >
+                      <Box position="relative">
                         <MenuItem
                           as="a"
                           href="#"
@@ -262,11 +256,10 @@ export default function Navbar(): JSX.Element {
                             left="100%"
                             top="0"
                             zIndex={9999}
-                           
                           >
                             <Popover
-                             isOpen={isTechSubMenuOpen}
-                             onClose={handleTechSubMenuClose}
+                              isOpen={isTechSubMenuOpen}
+                              onClose={handleTechSubMenuClose}
                               closeOnBlur={true}
                               closeOnEsc={true}
                             >
@@ -287,11 +280,9 @@ export default function Navbar(): JSX.Element {
                                 left="100%"
                                 top="0"
                                 zIndex={10000}
-                               
                               >
                                 <Box mb={"10px"}>
                                   <Text
-                              
                                     fontWeight={"bold"}
                                     fontSize={"20px"}
                                     lineHeight={"2"}
@@ -329,8 +320,8 @@ export default function Navbar(): JSX.Element {
                         as="a"
                         href="#"
                         _hover={{ background: "blue", color: "white" }}
-                       /*  onMouseEnter={handleTechSubMenuClose} */
-                         onMouseEnter={handleBothActions}
+                        /*  onMouseEnter={handleTechSubMenuClose} */
+                        onMouseEnter={handleBothActions}
                       >
                         Accesorios para Vehículos
                       </MenuItem>
@@ -480,59 +471,60 @@ export default function Navbar(): JSX.Element {
 
           <Wrap color={"var(--chakra-colors-blackAlpha-800)"}>
             <WrapItem display={"flex"} alignItems={"flex-start"} gap={"1"}>
-  <Icon as={HiOutlineUser} w={"20px"} h={"20px"} />
-  <Popover trigger="hover" placement="bottom-start">
-    <PopoverTrigger>
-      <Box cursor="pointer">
-        Mariela
-        <Icon
-          as={MdKeyboardArrowDown}
-          color={"GrayText"}
-          w={"12px"}
-          h={"12px"}
-          marginLeft={"1px"}
-          marginRight={"8px"}
-          marginTop={"3px"}
-        />
-      </Box>
-    </PopoverTrigger>
-    
-    <PopoverContent
-      bg="white"
-      color="black"
-      fontSize="md"
-      borderColor="gray.200"
-      boxShadow="md"
-      right={"140px"}
-    >
-      <Box
-                      position={"sticky"}
-                      width={10}
-                      height={10}
-                      bg={"white"}
-                      transform="rotate(314deg)"
-                      top={"-6.5px"}
-                      left={"35px"}
+              <Icon as={HiOutlineUser} w={"20px"} h={"20px"} />
+              <Popover trigger="hover" placement="bottom-start">
+                <PopoverTrigger>
+                  <Box cursor="pointer">
+                    Mariela
+                    <Icon
+                      as={MdKeyboardArrowDown}
+                      color={"GrayText"}
+                      w={"12px"}
+                      h={"12px"}
+                      marginLeft={"1px"}
+                      marginRight={"8px"}
+                      marginTop={"3px"}
                     />
-      <Box margin={2} padding={2}>
-        <Box p={2}>Compras</Box>
-        <Box p={2}>Preguntas</Box>
-        <Box p={2}>OpinionesNUEVO</Box>
-        <Box p={2}>Créditos</Box>
-        <Box p={2}>Películas y series</Box>
-        <Box p={2}>Vender</Box>
-        <Box p={2}>Resumen</Box>
-        <Box p={2}>Novedades</Box>
-        <Box p={2}>Publicaciones</Box>
-        <Box p={2}>Ventas</Box>
-        <Box p={2}>Publicidad</Box>
-        <Box p={2}>Facturación</Box>
-        <Box p={2}>Mercado Shops</Box>
-        <Box p={2}>Mi perfil</Box>
-      </Box>
-    </PopoverContent>
-  </Popover>
-</WrapItem>
+                  </Box>
+                </PopoverTrigger>
+
+                <PopoverContent
+                  bg="white"
+                  color="black"
+                  fontSize="md"
+                  borderColor="gray.200"
+                  boxShadow="md"
+                  right={"140px"}
+                >
+                  <Box
+                    position={"sticky"}
+                    width={10}
+                    height={10}
+                    bg={"white"}
+                    transform="rotate(314deg)"
+                    top={"-6.5px"}
+                    left={"35px"}
+                  />
+                  <Box margin={2} padding={2}>
+                    <Box p={2}>Compras</Box>
+                    <Box p={2}>Preguntas</Box>
+                    <Box p={2}>Opiniones NUEVO</Box>
+                    <Box p={2}>Créditos</Box>
+                    <Box p={2}>Películas y series</Box>
+                    <Box p={2}>Vender</Box>
+                    <Box p={2}>Resumen</Box>
+                    <Box p={2}>Novedades</Box>
+                    <Box p={2}>Publicaciones</Box>
+                    <Box p={2}>Ventas</Box>
+                    <Box p={2}>Publicidad</Box>
+                    <Box p={2}>Facturación</Box>
+                    <Box p={2}>Mercado Shops</Box>
+                    <Box p={2}>Mi perfil</Box>
+                    <Box p={2}>Salir</Box>
+                  </Box>
+                </PopoverContent>
+              </Popover>
+            </WrapItem>
 
             <WrapItem cursor="pointer">Mis compras</WrapItem>
             <WrapItem cursor="pointer">
