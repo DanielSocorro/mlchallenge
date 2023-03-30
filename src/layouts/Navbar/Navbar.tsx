@@ -3,6 +3,7 @@ import {
   HStack,
   Stack,
   Image,
+  Img,
   Input,
   Icon,
   Text,
@@ -33,6 +34,8 @@ import { HiOutlineUser } from "react-icons/hi2";
 import { TfiBell } from "react-icons/tfi";
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+/* import dplusImg from "../Home/components/Suscribe/Images/dplus.svg";
+import starplusImg from "../Home/components/Suscribe/Images/starplus.svg"; */
 
 export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
@@ -496,7 +499,7 @@ export default function Navbar(): JSX.Element {
                   borderColor="gray.200"
                   boxShadow="md"
                   right={"140px"}
-                  width={"400px"}
+                  width={"340px"}
                 >
                   <Box
                     position={"sticky"}
@@ -519,7 +522,7 @@ export default function Navbar(): JSX.Element {
                       <Text
                       position={"relative"}
                       left={71}
-                      width={90} top={2}>Hola Mariela
+                      width={80} top={2}>Hola Mariela
                       
                       </Text>
                       <Text
@@ -536,6 +539,8 @@ export default function Navbar(): JSX.Element {
                       ml={1}
                       
                     /></Text>
+                    
+                    
                       <div
                         style={{
                           position: "absolute",
@@ -546,7 +551,7 @@ export default function Navbar(): JSX.Element {
                           height: "55px",
                           borderRadius: "50%",
                           background:
-                            "linear-gradient(270deg, #00a4d5 48%, #d5d0d0 52%)",
+                            "linear-gradient(270deg, #00a4d5 40%, #eae9e9 60%)",
                           padding: "5px",
                         }}
                       >
@@ -557,7 +562,7 @@ export default function Navbar(): JSX.Element {
                           transform="translate(-50%, -50%)"
                           borderRadius="50%"
                           backgroundColor="white"
-                          boxSize="90%" // Ajusta el tamaño de la caja blanca interna
+                          boxSize="90%" 
                         />
                       </div>
                       
@@ -577,7 +582,28 @@ export default function Navbar(): JSX.Element {
                       </Box>
                     </Box>
                     <Box
-                      borderBottom={"0.01px solid gray"}
+                    width={"76%"}
+                    marginLeft={"70px"}
+                    bgImage={"linear-gradient(to right, #A90F90 50% , #161A55  )"}
+                    justifyContent="space-between"
+                    css={{ borderRadius: "0 26px 26px 26px" }}
+
+                    >
+                       <Text fontSize={{ base: "14px", sm: "12px"}} 
+                              fontWeight="700" 
+                              padding="9px" 
+                              color="#eae9e9"
+                              
+                              >
+                        Suscríbete al nivel 6
+                      </Text>
+                     {/*  <Img src={starplusImg} />
+                      <Img src={dplusImg} /> */}
+                    </Box>
+
+
+                    <Box
+                      borderBottom={"0.01px solid #eae9e9"}
                       p={2}
                       marginTop={10}
                       marginBottom={5}
@@ -591,13 +617,13 @@ export default function Navbar(): JSX.Element {
                           position: "absolute",
                           left: "auto",
                           right: "auto",
-                          marginLeft: "190px",
-                          marginTop: "5px",
+                          marginLeft: "168px",
+                          marginTop: "3px",
                           backgroundColor: "#3483fa",
                           borderRadius: "10px",
                           fontWeight: "bolder",
                           textTransform: "uppercase",
-                          fontSize: "15px",
+                          fontSize: "12px",
                           padding: "4px 6px",
                           lineHeight: "1em",
                           color: "#fff",
@@ -607,12 +633,12 @@ export default function Navbar(): JSX.Element {
                         nuevo
                       </span>
                     </Box>
-                    <Box borderBottom={"0.01px solid gray"} p={2} />
+                    <Box borderBottom={"0.01px solid #eae9e9"} p={2} />
                     <Box p={2} marginTop={5}>
                       Créditos
                     </Box>
                     <Box p={2}>Películas y series</Box>
-                    <Box borderBottom={"0.01px solid gray"} p={2} />
+                    <Box borderBottom={"0.01px solid #eae9e9"} p={2} />
                     <Box p={2} marginTop={5}>
                       Vender
                     </Box>
@@ -623,11 +649,11 @@ export default function Navbar(): JSX.Element {
                     <Box p={2}>Publicidad</Box>
                     <Box p={2}>Facturación</Box>
                     <Box p={2}>Mercado Shops</Box>
-                    <Box borderBottom={"0.01px solid gray"} p={2} />
+                    <Box borderBottom={"0.01px solid #eae9e9"} p={2} />
                     <Box p={2} marginTop={5}>
                       Mi perfil
                     </Box>
-                    <Box borderBottom={"0.01px solid gray"} p={2} />
+                    <Box borderBottom={"0.01px solid #eae9e9"} p={2} />
                     <Box p={2} marginTop={5}>
                       Salir
                     </Box>
