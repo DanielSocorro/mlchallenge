@@ -26,6 +26,7 @@ import {
 import logo from "../../Images/logo.png";
 import promoImg from "../../Images/promo-img.webp";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import { BiUserCircle } from "react-icons/bi";
 import { GoLocation } from "react-icons/go";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi2";
@@ -495,6 +496,7 @@ export default function Navbar(): JSX.Element {
                   borderColor="gray.200"
                   boxShadow="md"
                   right={"140px"}
+                  width={"400px"}
                 >
                   <Box
                     position={"sticky"}
@@ -505,13 +507,115 @@ export default function Navbar(): JSX.Element {
                     top={"-6.5px"}
                     left={"35px"}
                   />
-                  <Box margin={2} padding={2}>
+                  <Box padding={3} color={"gray.500"}>
+                    
+                    <Box
+                      position="relative"
+                      display="inline-block"
+                      width="70px"
+                      height="70px"
+                      marginTop="-24px"
+                    >
+                      <Text
+                      position={"relative"}
+                      left={71}
+                      width={90} top={2}>Hola Mariela
+                      
+                      </Text>
+                      <Text
+                      position={"relative"}
+                      left={71}
+                      width={250}
+                      fontWeight={"bolder"}
+                      top={2}>Nivel 3 - Mercado Puntos <Icon
+                      as={MdKeyboardArrowRight}
+                      position={"relative"}
+                      top={"5px"}
+                      w={"20px"}
+                      h={"20px"}
+                      ml={1}
+                      
+                    /></Text>
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "46%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          width: "55px",
+                          height: "55px",
+                          borderRadius: "50%",
+                          background:
+                            "linear-gradient(270deg, #00a4d5 48%, #d5d0d0 52%)",
+                          padding: "5px",
+                        }}
+                      >
+                        <Box
+                          position="absolute"
+                          top="50%"
+                          left="50%"
+                          transform="translate(-50%, -50%)"
+                          borderRadius="50%"
+                          backgroundColor="white"
+                          boxSize="90%" // Ajusta el tamaño de la caja blanca interna
+                        />
+                      </div>
+                      
+                      <Box
+                        position="absolute"
+                        top="50%"
+                        left="50%"
+                        transform="translate(-50%, -50%)"
+                      >
+                        <Icon
+                          as={BiUserCircle}
+                          width={"50px"}
+                          height={"50px"}
+                          color={"gray.300"}
+                        />
+                      
+                      </Box>
+                    </Box>
+                    <Box
+                      borderBottom={"0.01px solid gray"}
+                      p={2}
+                      marginTop={10}
+                      marginBottom={5}
+                    />
                     <Box p={2}>Compras</Box>
                     <Box p={2}>Preguntas</Box>
-                    <Box p={2}>Opiniones NUEVO</Box>
-                    <Box p={2}>Créditos</Box>
+                    <Box p={2}>
+                      Opiniones{" "}
+                      <span
+                        style={{
+                          position: "absolute",
+                          left: "auto",
+                          right: "auto",
+                          marginLeft: "190px",
+                          marginTop: "5px",
+                          backgroundColor: "#3483fa",
+                          borderRadius: "10px",
+                          fontWeight: "bolder",
+                          textTransform: "uppercase",
+                          fontSize: "15px",
+                          padding: "4px 6px",
+                          lineHeight: "1em",
+                          color: "#fff",
+                          display: "inline-block",
+                        }}
+                      >
+                        nuevo
+                      </span>
+                    </Box>
+                    <Box borderBottom={"0.01px solid gray"} p={2} />
+                    <Box p={2} marginTop={5}>
+                      Créditos
+                    </Box>
                     <Box p={2}>Películas y series</Box>
-                    <Box p={2}>Vender</Box>
+                    <Box borderBottom={"0.01px solid gray"} p={2} />
+                    <Box p={2} marginTop={5}>
+                      Vender
+                    </Box>
                     <Box p={2}>Resumen</Box>
                     <Box p={2}>Novedades</Box>
                     <Box p={2}>Publicaciones</Box>
@@ -519,8 +623,14 @@ export default function Navbar(): JSX.Element {
                     <Box p={2}>Publicidad</Box>
                     <Box p={2}>Facturación</Box>
                     <Box p={2}>Mercado Shops</Box>
-                    <Box p={2}>Mi perfil</Box>
-                    <Box p={2}>Salir</Box>
+                    <Box borderBottom={"0.01px solid gray"} p={2} />
+                    <Box p={2} marginTop={5}>
+                      Mi perfil
+                    </Box>
+                    <Box borderBottom={"0.01px solid gray"} p={2} />
+                    <Box p={2} marginTop={5}>
+                      Salir
+                    </Box>
                   </Box>
                 </PopoverContent>
               </Popover>
