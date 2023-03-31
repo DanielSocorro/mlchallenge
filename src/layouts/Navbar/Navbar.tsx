@@ -190,6 +190,7 @@ export default function Navbar(): JSX.Element {
                       />
                     </BreadcrumbLink>
                   </PopoverTrigger>
+            
                   <PopoverContent
                     bg={"#333"}
                     border={"none"}
@@ -204,16 +205,10 @@ export default function Navbar(): JSX.Element {
                     overflow={"hidden"}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <Box
-                      position={"fixed"}
-                      width={5}
-                      height={5}
-                      bg={"#333"}
-                      transform="rotate(314deg)"
-                      top={"-6.5px"}
-                      right={"79px"}
-                    />
+                 
+                    
                     <Menu>
+                  
                       <MenuItem
                         as="a"
                         href="#"
@@ -502,13 +497,13 @@ export default function Navbar(): JSX.Element {
                   width={"340px"}
                 >
                   <Box
-                    position={"sticky"}
+                    position={"relative"}
                     width={10}
                     height={10}
                     bg={"white"}
                     transform="rotate(314deg)"
                     top={"-6.5px"}
-                    left={"35px"}
+                    left={"175px"}
                   />
                   <Box padding={3} color={"gray.500"}>
                     
@@ -605,7 +600,7 @@ export default function Navbar(): JSX.Element {
                     <Box
                       borderBottom={"0.01px solid #eae9e9"}
                       p={2}
-                      marginTop={10}
+                      marginTop={0}
                       marginBottom={5}
                     />
                     <Box p={2}>Compras</Box>
