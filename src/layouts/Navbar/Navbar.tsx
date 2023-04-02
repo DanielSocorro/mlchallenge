@@ -206,17 +206,22 @@ export default function Navbar(): JSX.Element {
                     onMouseLeave={handleMouseLeave}
                     
                   >
-                    
-                    <Menu>
                     <Box
-                      position={"sticky"}
-                      width={5}
-                      height={5}
-                      bg={"#333"}
-                      transform="rotate(314deg)"
-                      top={"-6.5px"}
-                      right={"79px"}
-                    />
+                   
+                   position={"absolute"}
+                   width={5}
+                   height={5}
+                   bg={"#333"}
+                   transform="rotate(314deg)"
+                  top={"-1%"}
+                  right={"33%"}
+                  zIndex={"25"}
+
+                
+                 />
+                  <Box>
+                    <Menu>
+                
                       <MenuItem
                         as="a"
                         href="#"
@@ -424,6 +429,7 @@ export default function Navbar(): JSX.Element {
                         Ver más categorias
                       </MenuItem>
                     </Menu>
+                    </Box>
                   </PopoverContent>
                 </Popover>
               </BreadcrumbItem>
