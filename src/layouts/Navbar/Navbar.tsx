@@ -34,8 +34,8 @@ import { HiOutlineUser } from "react-icons/hi2";
 import { TfiBell } from "react-icons/tfi";
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-/* import dplusImg from "../Home/components/Suscribe/Images/dplus.svg";
-import starplusImg from "../Home/components/Suscribe/Images/starplus.svg"; */
+import dplusImg from "./images/Disney+logo.svg";
+import starplusImg from "./images/Star+logo.svg";
 
 export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
@@ -190,7 +190,7 @@ export default function Navbar(): JSX.Element {
                       />
                     </BreadcrumbLink>
                   </PopoverTrigger>
-            
+                  
                   <PopoverContent
                     bg={"#333"}
                     border={"none"}
@@ -204,11 +204,19 @@ export default function Navbar(): JSX.Element {
                     padding={"12px 20px"}
                     overflow={"hidden"}
                     onMouseLeave={handleMouseLeave}
+                    
                   >
-                 
                     
                     <Menu>
-                  
+                    <Box
+                      position={"sticky"}
+                      width={5}
+                      height={5}
+                      bg={"#333"}
+                      transform="rotate(314deg)"
+                      top={"-6.5px"}
+                      right={"79px"}
+                    />
                       <MenuItem
                         as="a"
                         href="#"
@@ -579,21 +587,24 @@ export default function Navbar(): JSX.Element {
                     <Box
                     width={"76%"}
                     marginLeft={"70px"}
-                    bgImage={"linear-gradient(to right, #A90F90 50% , #161A55  )"}
+                    bgImage={"linear-gradient(to right, #A90F90 30% , #161A55  )"}
                     justifyContent="space-between"
                     css={{ borderRadius: "0 26px 26px 26px" }}
+                    height={"40px"}
 
                     >
                        <Text fontSize={{ base: "14px", sm: "12px"}} 
                               fontWeight="700" 
-                              padding="9px" 
+                              padding="12px" 
                               color="#eae9e9"
+                              height={"0px"}
                               
                               >
                         Suscríbete al nivel 6
                       </Text>
-                     {/*  <Img src={starplusImg} />
-                      <Img src={dplusImg} /> */}
+                      
+                      <Img src={dplusImg} position={"relative"} display={"inline-flex"} width={"37px"} marginLeft={"143px"} bottom={"16px"} />
+                      <Img src={starplusImg} position={"relative"} display={"inline-flex"} width={"35px"} marginLeft={"188px"} bottom={"42px"} />
                     </Box>
 
 
