@@ -213,7 +213,6 @@ export default function Navbar(): JSX.Element {
                       transform="rotate(314deg)"
                       top={"-0.8%"}
                       right={"31.4%"}
-                      
                     />
                     <Box>
                       <Menu>
@@ -272,7 +271,6 @@ export default function Navbar(): JSX.Element {
                               >
                                 <PopoverContent
                                   bg={"white"}
-                                 
                                   w={780}
                                   h={725}
                                   color={"black"}
