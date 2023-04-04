@@ -711,7 +711,7 @@ export default function Navbar(): JSX.Element {
     <Text
     position={"relative"}
     top={"-15px"}
-    left={4}
+    left={6}
     fontWeight={"medium"}
     >Favoritos
     </Text>
