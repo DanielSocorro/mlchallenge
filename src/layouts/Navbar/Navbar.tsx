@@ -492,7 +492,6 @@ export default function Navbar(): JSX.Element {
                     />
                   </Box>
                 </PopoverTrigger>
-
                 <PopoverContent
                   bg="white"
                   color="black"
@@ -539,7 +538,6 @@ export default function Navbar(): JSX.Element {
                           ml={1}
                         />
                       </Text>
-
                       <div
                         style={{
                           position: "absolute",
@@ -564,7 +562,6 @@ export default function Navbar(): JSX.Element {
                           boxSize="90%"
                         />
                       </div>
-
                       <Box
                         position="absolute"
                         top="50%"
@@ -616,7 +613,6 @@ export default function Navbar(): JSX.Element {
                         bottom={"42px"}
                       />
                     </Box>
-
                     <Box
                       borderBottom={"0.01px solid #eae9e9"}
                       p={2}
@@ -676,7 +672,6 @@ export default function Navbar(): JSX.Element {
                 </PopoverContent>
               </Popover>
             </WrapItem>
-
             <WrapItem cursor="pointer">Mis compras</WrapItem>
             <WrapItem cursor="pointer">
               Favoritos
