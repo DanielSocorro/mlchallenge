@@ -695,8 +695,9 @@ export default function Navbar(): JSX.Element {
  borderColor="gray.200"
  boxShadow="md"
  right={"125px"}
- width={"360px"}
+ width={"440px"}
 >
+  
  <Box
    position={"relative"}
    width={8}
@@ -704,8 +705,22 @@ export default function Navbar(): JSX.Element {
    bg={"white"}
    transform="rotate(314deg)"
    top={"-5.5px"}
-   left={"317px"}
+   left={"90%"}
  />
+  <Box>
+    <Text
+    position={"relative"}
+    top={"-15px"}
+    left={4}
+    fontWeight={"medium"}
+    >Favoritos
+    </Text>
+  </Box>
+  <Box
+     borderBottom={"0.01px solid #eae9e9"}
+     marginTop={0}
+     marginBottom={10}
+   />
 </PopoverContent>
  </Popover>
             <WrapItem>
