@@ -673,17 +673,41 @@ export default function Navbar(): JSX.Element {
               </Popover>
             </WrapItem>
             <WrapItem cursor="pointer">Mis compras</WrapItem>
-            <WrapItem cursor="pointer">
-              Favoritos
-              <Icon
-                as={MdKeyboardArrowDown}
-                position={"relative"}
-                color={"GrayText"}
-                w={"12px"}
-                h={"12px"}
-                margin={"4px"}
-              />
-            </WrapItem>
+            <Popover trigger="hover">
+ <PopoverTrigger>
+   <Box cursor="pointer">
+   
+   Favoritos
+  <Icon
+  as={MdKeyboardArrowDown}
+  position={"relative"}
+  color={"GrayText"}
+  w={"12px"}
+  h={"12px"}
+ 
+ />
+   </Box>
+ </PopoverTrigger>
+<PopoverContent
+ bg="white"
+ color="black"
+ fontSize="md"
+ borderColor="gray.200"
+ boxShadow="md"
+ right={"125px"}
+ width={"360px"}
+>
+ <Box
+   position={"relative"}
+   width={8}
+   height={8}
+   bg={"white"}
+   transform="rotate(314deg)"
+   top={"-5.5px"}
+   left={"317px"}
+ />
+</PopoverContent>
+ </Popover>
             <WrapItem>
               <Wrap>
                 <StackItem>
