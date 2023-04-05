@@ -721,6 +721,42 @@ export default function Navbar(): JSX.Element {
      marginTop={0}
      marginBottom={10}
    />
+   <Text
+   position={"relative"}
+   top={"-15px"}
+   left={"26%"}
+   width={"65%"}
+   >
+    Preservision Areds 2 Vitaminas Version
+    210 Softgels Oferta
+    <Text
+    fontWeight={"medium"}
+    fontSize={"2xl"}
+    >
+    $69.990
+    </Text>
+    
+    en 6x $11.665 sin interés
+   </Text>
+    <Box
+     borderBottom={"0.01px solid #eae9e9"}
+     marginTop={0}
+     marginBottom={10}
+     boxShadow={"0 0 10px rgba(0, 0, 0, 0.55)"}
+   />
+   <Box>
+    <Text
+    position={"relative"}
+    color={"#007aff"}
+    top={"-15px"}
+    display={"flex"}
+    justifyContent={"center"}
+    
+        >Ver todos los favoritos
+    </Text>
+  </Box>
+  
+  
 </PopoverContent>
  </Popover>
             <WrapItem>
