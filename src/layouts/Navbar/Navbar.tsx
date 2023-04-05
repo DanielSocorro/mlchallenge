@@ -44,6 +44,7 @@ export default function Navbar(): JSX.Element {
   const { onOpen, onClose, isOpen } = useDisclosure();
   const [isTechSubMenuOpen, setIsTechSubMenuOpen] = useState(false);
 
+
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setNewQuery(e.currentTarget.value);
   };
@@ -77,6 +78,7 @@ export default function Navbar(): JSX.Element {
     handleMouseEnter();
     handleTechSubMenuClose();
   }
+  
 
   return (
     <Box bg="yellow" w={"100%"} h={"100px"} p={"8px 0"} gap={"20px"}>
@@ -766,7 +768,9 @@ export default function Navbar(): JSX.Element {
             </Popover>
             <WrapItem>
               <Wrap>
-                <StackItem>
+                <StackItem
+                
+                >
                   <span
                     style={{
                       position: "relative",
