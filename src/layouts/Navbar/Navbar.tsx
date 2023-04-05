@@ -36,6 +36,7 @@ import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import dplusImg from "./images/Disney+logo.svg";
 import starplusImg from "./images/Star+logo.svg";
+import medicinImg from "./images/medicin.png";
 
 export default function Navbar(): JSX.Element {
   const [newQuery, setNewQuery] = useState("");
@@ -674,91 +675,95 @@ export default function Navbar(): JSX.Element {
             </WrapItem>
             <WrapItem cursor="pointer">Mis compras</WrapItem>
             <Popover trigger="hover">
- <PopoverTrigger>
-   <Box cursor="pointer">
-   
-   Favoritos
-  <Icon
-  as={MdKeyboardArrowDown}
-  position={"relative"}
-  color={"GrayText"}
-  w={"12px"}
-  h={"12px"}
- 
- />
-   </Box>
- </PopoverTrigger>
-<PopoverContent
- bg="white"
- color="black"
- fontSize="md"
- borderColor="gray.200"
- boxShadow="md"
- right={"125px"}
- width={"440px"}
->
-  
- <Box
-   position={"relative"}
-   width={8}
-   height={8}
-   bg={"white"}
-   transform="rotate(314deg)"
-   top={"-5.5px"}
-   left={"90%"}
- />
-  <Box>
-    <Text
-    position={"relative"}
-    top={"-15px"}
-    left={6}
-    fontWeight={"medium"}
-    >Favoritos
-    </Text>
-  </Box>
-  <Box
-     borderBottom={"0.01px solid #eae9e9"}
-     marginTop={0}
-     marginBottom={10}
-   />
-   <Text
-   position={"relative"}
-   top={"-15px"}
-   left={"26%"}
-   width={"65%"}
-   >
-    Preservision Areds 2 Vitaminas Version
-    210 Softgels Oferta
-    <Text
-    fontWeight={"medium"}
-    fontSize={"2xl"}
-    >
-    $69.990
-    </Text>
-    
-    en 6x $11.665 sin interés
-   </Text>
-    <Box
-     borderBottom={"0.01px solid #eae9e9"}
-     marginTop={0}
-     marginBottom={10}
-     boxShadow={"0 0 10px rgba(0, 0, 0, 0.55)"}
-   />
-   <Box>
-    <Text
-    position={"relative"}
-    color={"#007aff"}
-    top={"-15px"}
-    display={"flex"}
-    justifyContent={"center"}
-    
-        >Ver todos los favoritos
-    </Text>
-  </Box>
-  
-  
-</PopoverContent>
- </Popover>
+              <PopoverTrigger>
+                <Box cursor="pointer">
+                  Favoritos
+                  <Icon
+                    as={MdKeyboardArrowDown}
+                    position={"relative"}
+                    color={"GrayText"}
+                    w={"12px"}
+                    h={"12px"}
+                  />
+                </Box>
+              </PopoverTrigger>
+              <PopoverContent
+                bg="white"
+                color="black"
+                fontSize="md"
+                borderColor="gray.200"
+                boxShadow="md"
+                right={"125px"}
+                width={"440px"}
+              >
+                <Box
+                  position={"relative"}
+                  width={8}
+                  height={8}
+                  bg={"white"}
+                  transform="rotate(314deg)"
+                  top={"-5.5px"}
+                  left={"90%"}
+                />
+                <Box>
+                  <Text
+                    position={"relative"}
+                    top={"-15px"}
+                    left={6}
+                    fontWeight={"medium"}
+                  >
+                    Favoritos
+                  </Text>
+                </Box>
+                <Box></Box>
+                <Box
+                  borderBottom={"0.01px solid #eae9e9"}
+                  marginTop={0}
+                  marginBottom={10}
+                />
+                <Img
+                  src={medicinImg}
+                  position={"relative"}
+                  display={"flex"}
+                  width={"120px"}
+                />
+                <Text
+                  position={"relative"}
+                  top={"-115px"}
+                  left={"30%"}
+                  width={"65%"}
+                >
+                  Preservision Areds 2 Vitaminas Version 210 Softgels Oferta
+                  <Text fontWeight={"medium"} fontSize={"2xl"}>
+                    $69.990
+                  </Text>
+                  en 
+                  <Text
+                  display={"inline"}
+                  marginLeft={1}
+                  color={"#00a650"}>
+                  6x $11.665 sin interés
+                    </Text>
+                </Text>
+                <Box
+                  borderBottom={"0.01px solid #eae9e9"}
+                  marginTop={0}
+                  marginBottom={10}
+                  boxShadow={"0 -5px 7px 0px rgba(0, 0, 0, 0.75)"}
+                />
+                <Box>
+                  <Text
+                    position={"relative"}
+                    color={"#007aff"}
+                    top={"-20px"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                  >
+                    Ver todos los favoritos
+                  </Text>
+                </Box>
+              </PopoverContent>
+            </Popover>
             <WrapItem>
               <Wrap>
                 <StackItem>
