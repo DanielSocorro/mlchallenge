@@ -166,7 +166,6 @@ export default function Navbar(): JSX.Element {
                 </Text>
               </Stack>
             </Stack>
-
             <Breadcrumb separator={""}>
               <BreadcrumbItem>
                 <Popover
