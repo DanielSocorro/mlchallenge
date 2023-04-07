@@ -32,6 +32,7 @@ import { GoLocation } from "react-icons/go";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi2";
 import { TfiBell } from "react-icons/tfi";
+import { IoSettingsOutline } from "react-icons/io5";
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import dplusImg from "./images/Disney+logo.svg";
@@ -43,7 +44,6 @@ export default function Navbar(): JSX.Element {
   const navigate = useNavigate();
   const { onOpen, onClose, isOpen } = useDisclosure();
   const [isTechSubMenuOpen, setIsTechSubMenuOpen] = useState(false);
-
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setNewQuery(e.currentTarget.value);
@@ -78,7 +78,6 @@ export default function Navbar(): JSX.Element {
     handleMouseEnter();
     handleTechSubMenuClose();
   }
-  
 
   return (
     <Box bg="yellow" w={"100%"} h={"100px"} p={"8px 0"} gap={"20px"}>
@@ -739,13 +738,10 @@ export default function Navbar(): JSX.Element {
                   <Text fontWeight={"medium"} fontSize={"2xl"}>
                     $69.990
                   </Text>
-                  en 
-                  <Text
-                  display={"inline"}
-                  marginLeft={1}
-                  color={"#00a650"}>
-                  6x $11.665 sin interés
-                    </Text>
+                  en
+                  <Text display={"inline"} marginLeft={1} color={"#00a650"}>
+                    6x $11.665 sin interés
+                  </Text>
                 </Text>
                 <Box
                   borderBottom={"0.01px solid #eae9e9"}
@@ -766,15 +762,14 @@ export default function Navbar(): JSX.Element {
                 </Box>
               </PopoverContent>
             </Popover>
-            <WrapItem>
-              <Wrap>
-                <StackItem
-                
-                >
+
+            <Popover trigger="hover" placement="bottom-start">
+              <PopoverTrigger>
+                <Box cursor="pointer">
                   <span
                     style={{
                       position: "relative",
-                      top: "-38%",
+                      top: "-39.5%",
                       left: "60%",
                       backgroundColor: "red",
                       borderRadius: "3px",
@@ -783,20 +778,59 @@ export default function Navbar(): JSX.Element {
                       color: "#fff",
                     }}
                   >
-                    1
+                    2
                   </span>
                   <Icon as={TfiBell} h="20px" w="20px" cursor="pointer" />
-                </StackItem>
-                <WrapItem>
-                  <Icon
-                    as={AiOutlineShoppingCart}
-                    h="20px"
-                    w="20px"
-                    cursor="pointer"
-                  />
-                </WrapItem>
-              </Wrap>
-            </WrapItem>
+                </Box>
+              </PopoverTrigger>
+
+              <PopoverContent
+                bg="white"
+                color="black"
+                fontSize="md"
+                borderColor="gray.200"
+                boxShadow="md"
+                width={"320px"}
+                left={"20px"}
+              >
+              
+                <Box
+                  position={"relative"}
+                  width={5}
+                  height={5}
+                  bg={"white"}
+                  transform="rotate(314deg)"
+                  top={"-6.5px"}
+                  left={"280px"}
+                />
+                <Text
+                position={"relative"}
+                fontSize={12}
+                left={"10px"}
+                >Notificaciones</Text>
+                 <Icon 
+                 as={IoSettingsOutline}
+                 position={"relative"}
+                 left={"90%"}
+                 top={"-15px"}
+                 >
+
+                </Icon>   
+                 <Box borderBottom={"0.01px solid #eae9e9"} />
+
+                 <Text>
+                  ¡ULTIMO DÍA!
+                 </Text>
+              </PopoverContent>
+            </Popover>
+            <Box>
+              <Icon
+                as={AiOutlineShoppingCart}
+                h="20px"
+                w="20px"
+                cursor="pointer"
+              />
+            </Box>
           </Wrap>
         </HStack>
       </VStack>
