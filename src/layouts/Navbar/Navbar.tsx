@@ -192,7 +192,6 @@ export default function Navbar(): JSX.Element {
                       />
                     </BreadcrumbLink>
                   </PopoverTrigger>
-
                   <PopoverContent
                     bg={"#333"}
                     border={"none"}
