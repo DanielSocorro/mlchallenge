@@ -318,7 +318,6 @@ export default function Navbar(): JSX.Element {
                             </Box>
                           </MenuItem>
                         </Box>
-
                         <MenuItem
                           as="a"
                           href="#"
