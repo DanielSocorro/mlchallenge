@@ -144,7 +144,6 @@ export default function Navbar(): JSX.Element {
           </HStack>
           <Image src={promoImg} h={"40px"} />
         </HStack>
-
         <HStack
           w={"100%"}
           m={"0"}
