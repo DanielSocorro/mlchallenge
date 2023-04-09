@@ -322,7 +322,7 @@ export default function Navbar(): JSX.Element {
                           as="a"
                           href="#"
                           _hover={{ background: "blue", color: "white" }}
-                          /*  onMouseEnter={handleTechSubMenuClose} */
+                         
                           onMouseEnter={handleBothActions}
                         >
                           Accesorios para Vehículos
