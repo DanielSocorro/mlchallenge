@@ -170,8 +170,8 @@ export default function Navbar(): JSX.Element {
                 <Popover
                   isOpen={isOpen}
                   onClose={onClose}
-                  closeOnBlur={true}
-                  closeOnEsc={true}
+                  closeOnBlur={false}
+                  closeOnEsc={false}
                 >
                   <PopoverTrigger>
                     <BreadcrumbLink
