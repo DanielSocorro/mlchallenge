@@ -171,7 +171,7 @@ export default function Navbar(): JSX.Element {
                   isOpen={isOpen}
                   onClose={onClose}
                   closeOnBlur={false}
-                  closeOnEsc={false}
+                  closeOnEsc={true}
                 >
                   <PopoverTrigger>
                     <BreadcrumbLink
@@ -501,12 +501,12 @@ export default function Navbar(): JSX.Element {
                 >
                   <Box
                     position={"relative"}
-                    width={10}
-                    height={10}
+                    width={6}
+                    height={6}
                     bg={"white"}
                     transform="rotate(314deg)"
                     top={"-6.5px"}
-                    left={"175px"}
+                    left={"180px"}
                   />
                   <Box padding={3} color={"gray.500"}>
                     <Box
@@ -690,7 +690,7 @@ export default function Navbar(): JSX.Element {
                 fontSize="md"
                 borderColor="gray.200"
                 boxShadow="md"
-                right={"125px"}
+                right={"163px"}
                 width={"440px"}
               >
                 <Box
