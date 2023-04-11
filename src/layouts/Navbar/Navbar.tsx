@@ -788,6 +788,7 @@ export default function Navbar(): JSX.Element {
                 boxShadow="md"
                 width={"320px"}
                 left={"20px"}
+               
               >
               
                 <Box
